@@ -71,11 +71,10 @@ header {
     display: flex;
     margin: 0 auto;
     justify-content:space-between;
-    width:300px;
+    width:600px;
     text-align: center;
 }
 .menu-linksbtn a {
-    display:block;
     display:block;
     text-align: center;
     color:#fff;
@@ -89,7 +88,8 @@ header {
 }
 .menu-linksbtn a:hover{
     color: #95E5FF;
-    transition: 0.5s;
+    transition: 0.5s ease-in-out;
+    letter-spacing: 0.7;
 }
 .menusocial{
     right: 0;
@@ -233,7 +233,7 @@ position: absolute;
   padding-top: 50px;
   border-bottom-right-radius: 32px;
   border-bottom-left-radius: 32px;
-  height:290px
+  height:330px
   }
   .menu-links ul{
       display: block;
@@ -244,6 +244,7 @@ position: absolute;
   }
   .menu-linksbtn{
       display: flex;
+      margin-bottom: 20px;
   }
   .menusocial ul{
       display: flex;
@@ -408,10 +409,15 @@ position: absolute;
     margin: auto;
     background-color: #fff;
 }
-.aboutcontainer svg{
+.aboutcontainer::after {
+    content: '';
+    inset: 0;
+    background:url(../assets/Component3.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: bottom;
+    bottom: -1px;
     position: absolute;
-    bottom: 0%;
-    z-index: 1;
 }
 .bgs-web-aboutt{
     width:100%;
@@ -668,10 +674,10 @@ swiper-container.mySwiper {
   transition: all 0.8s ease;
 }
 
-/* THE PSUEDO CLASS CONTROLS THE FLIP ON MOUSEOVER AND MOUSEOUT */
+/* THE PSUEDO CLASS CONTROLS THE FLIP ON MOUSEOVER AND MOUSEOUT
 .thecard:hover{
 }
-
+ */
 /* THE FRONT FACE OF THE CARD, WHICH SHOWS BY DEFAULT */
  .thefront{
   position: absolute;
@@ -972,7 +978,7 @@ swiper-container.mySwiper {
     max-width: 3000px;
     margin: auto;
     padding-top: 50;
-    margin-bottom: 210px;
+    margin-bottom: 160px;
     height: 100%;
     max-height: 730px;
     background-color: #95E5FF;
@@ -984,7 +990,7 @@ swiper-container.mySwiper {
     background-repeat: no-repeat;
     background-size: 100%;
     background-position: bottom;
-    bottom: -210px;
+    bottom: -150px;
     position: absolute;
 }
 .bgs-reviews2{
@@ -1278,7 +1284,7 @@ swiper-slide.swiper2 {
     max-width: 9290px;
     margin: auto;
     padding: 70px 50px 120px 50px;
-    margin-top: 220px;
+    margin-top: 180px;
 }
 .storycontainer::after {
     content: '';
@@ -1287,7 +1293,7 @@ swiper-slide.swiper2 {
     background-repeat: no-repeat;
     background-size: 100%;
     background-position: top;
-    top: -220px;
+    top: -150px;
     position: absolute;
 }
 .storyinfos{
@@ -1295,6 +1301,12 @@ swiper-slide.swiper2 {
     max-width: 669px;
     margin: auto;
     text-align: center;
+}
+.storyinfos .storyh5{
+    padding: 10px;
+    border-radius: 24px;
+    margin: 0 -10px;
+    outline: 1px solid #00AEEF;
 }
 .storygrid{
     width: 100%;
@@ -1378,6 +1390,61 @@ swiper-slide.swiper4 {
     font-weight: 900;
     line-height: 100%;
 }
+.story-3{
+    max-width: 610px;
+    margin: auto;
+    padding-top: 32px;
+}
+.story-3 ul{
+    display: flex;
+    width: 100%;
+    max-width: 610px;
+    justify-content: space-between;
+    list-style: none;
+}
+.story-3 ul li{
+    height: 140px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+.story-3 ul li img{
+    width: 100%;
+    max-width: 94px;
+    margin: auto;
+}
+.story-3 ul li h5{
+    color: #003D5A;
+    font-size: 22.02px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 100%; 
+}
+.storylinks button{
+    display: flex;
+    margin: auto;
+    margin-top: 64px;
+    text-decoration: none;
+    border-radius: 72px;
+    background: #003D5A;
+    width: 285px;
+    border: none;
+    padding: 8px 5px;
+    justify-content: center;
+    cursor: pointer;
+    align-items: center;
+}
+.storylinks button a{
+    display: flex;
+    text-decoration: none;
+    color: #FFF;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    line-height: 180%;
+}
+
 
 .bgs-web{
     display: block;
@@ -1395,6 +1462,7 @@ swiper-slide.swiper4 {
 
 .formgrid{
     display: flex;
+    flex-direction: column;
     position: relative;
     width: 100%;
     max-width: 2990px;
@@ -1506,6 +1574,9 @@ form {
     position: relative;
     display: flex;
     justify-content: space-between;
+    width: 100%;
+    max-width: 905px;
+    margin: auto;
 }
 @media screen and (max-width:1300px) {
     .bgs-web{
