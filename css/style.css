@@ -141,7 +141,7 @@ top: 10px;
 left: 25px;
 position: absolute;
 }
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 1100px) {
     .nonebar{display: none}
     .logo-m{
     z-index: 9;
@@ -442,7 +442,7 @@ position: absolute;
     display: flex;
     flex-direction: column; 
     margin: auto;
-    margin: 30 20 30 0;
+    margin: 30 20;
 }
 .about h2{
     margin-top: 0px;
@@ -484,40 +484,15 @@ position: absolute;
     transform: translateX(0%);
     opacity: 1;
 }*/
-@media screen and (max-width:1150px) {
-    .aboutcontainer{
-        height:547;
-    }
-    .bgs-web-aboutt{
-        max-width: 620;
-    }  
-    .abouttext{ 
-        margin: 30 20 0 0;
-    }
-}
-@media screen and (max-width:1090px) {
-    .aboutcontainer{
-        height:1300;
-        z-index: 99;
-    }
-    .abouttext{ 
-        max-width: 788px;
-        margin: 30 40 0 40;
-    }
-    .bgs-web-aboutt{
-        max-width: 1220px;
-        margin: auto;
-        float: none;
-    }  
-}
 @media screen and (max-width:790px) {
     .aboutcontainer{
-        height:100%;
-        max-height: auto;
+    }
+    .bgs-web-aboutt{
+        max-width: 350px;
     }
     .abouttext{ 
         max-width: 788px;
-        margin: 30 40 0 40;
+        margin: 30 40 30 40;
     }
     .abouttext h2{
         text-align: center
@@ -530,12 +505,6 @@ position: absolute;
     .abouttext p{
         text-align: center;
         font-size: 14px;
-    }
-    .abouttext h6{
-        font-size: 14px;
-        text-align: center;
-        margin: 20 0 20 0;
-        max-width: 860;
     }
 }
 
@@ -805,9 +774,9 @@ swiper-container.mySwiper {
     transform: translateX(-100%) rotateY(-180deg);
   }
   
-  
+  /*
   .card__face--front {
-  }
+  }*/
   
   .card__face--back {
     transform: rotateY(180deg);
@@ -831,6 +800,11 @@ swiper-container.mySwiper {
     bottom: -1px;
     position: absolute;
     z-index: 99;
+}
+@media screen and (max-width:1750px) {
+    .preferencecontainer{
+        max-height: 790px;
+    }
 }
 .preference{
     z-index: 9;
@@ -916,10 +890,14 @@ swiper-container.mySwiper {
 }
 @media screen and (max-width: 1270px) {
     .preferencecontainer{
-        max-height: 560px;
+        max-height: 700px;
+    }
+    .preference{
+        margin: auto;
+        padding: 70 0;
     }
     .preferencecontainer .preferencebgw{
-        max-height: 560px
+        max-height: 800px
     }
 }
 @media screen and (max-width: 1070px) {
@@ -978,12 +956,37 @@ swiper-container.mySwiper {
     max-width: 3000px;
     margin: auto;
     padding-top: 50;
-    margin-bottom: 160px;
+    margin-bottom: 120px;
     height: 100%;
-    max-height: 730px;
+    max-height: 750px;
     background-color: #95E5FF;
 }
-.reviewscontainer::after {
+.wavec2{
+    position: absolute;
+    bottom: -120px;
+    width: 100%;
+    max-width: 9999px;
+    display: block;
+    width: 100%;
+    object-fit: cover;
+
+}
+@media screen and (max-width:1350px) {
+.wavec2{
+    bottom: -90px;
+}
+}
+@media screen and (max-width:999px) {
+.wavec2{
+    bottom: -70px;
+}
+}
+@media screen and (max-width:799px) {
+.wavec2{
+    bottom: -30px;
+}
+}/*
+.reviewscontainer::before {
     content: '';
     inset: 0;
     background:url(../assets/Component4.png);
@@ -992,7 +995,7 @@ swiper-container.mySwiper {
     background-position: bottom;
     bottom: -150px;
     position: absolute;
-}
+}*/
 .bgs-reviews2{
     position: absolute;
     right: 120;
@@ -1120,7 +1123,6 @@ swiper-container.mySwiper {
     }
     .mySwiper3{
       margin: 50 0 !important;
-      max-height: 340;
 
     }
     .swiper3 {
@@ -1283,9 +1285,19 @@ swiper-slide.swiper2 {
     width: 100%;
     max-width: 9290px;
     margin: auto;
-    padding: 70px 50px 120px 50px;
+    padding: 0px 0 120px 0;
     margin-top: 180px;
 }
+.wavec1{
+    position: absolute;
+    top: -120px;
+    width: 100%;
+    max-width: 9999px;
+    display: block;
+    width: 100%;
+    object-fit: cover;
+    
+}/*
 .storycontainer::after {
     content: '';
     inset: 0;
@@ -1295,12 +1307,13 @@ swiper-slide.swiper2 {
     background-position: top;
     top: -150px;
     position: absolute;
-}
+}*/
 .storyinfos{
     color: #003D5A;
-    max-width: 669px;
+    max-width: 709px;
     margin: auto;
     text-align: center;
+    padding: 0 20px;
 }
 .storyinfos .storyh5{
     padding: 10px;
@@ -1336,7 +1349,7 @@ font-weight: 700;
 line-height: 100%
 }
 .storymission p{    
-    width: 332px;
+    max-width: 332px;
 font-size: 14px;
 font-style: normal;
 font-weight: 600;
@@ -1472,7 +1485,61 @@ swiper-slide.swiper4 {
     font-weight: 900;
     line-height: 200%; /* 32.434px */
 }
+@media screen and (max-width:1350px) {
+.wavec1{
+    top: -100px;
+}
+}
+@media screen and (max-width:999px) {
+.wavec1{
+    top: -80px;
+}
+.storycontainer{
+    margin-top: 0;
+}
+}
+@media screen and (max-width:810px) {
+.wavec1{
+    top: -50px;
+}
 
+/*MOBILE*/
+
+.storymission h2{
+    padding: 24px 0;    
+font-size: 20px;
+}
+.storymission p{    
+    width: 332px;
+font-size: 12px;
+}
+.storygrid{
+    flex-direction: column;
+    justify-content: center;
+}
+.storygrid .storymission{
+    justify-content: center;
+    width: 100%;
+    max-width: 400px;
+    border-left: none;
+    border-top: 3px solid #00AEEF;
+    padding-left: 0;
+    margin-left: 0;
+    text-align: center;
+    margin: auto;
+    padding-top: 34px;
+    margin-top: 34px;
+}
+.storymission p{    
+    margin: auto;
+}
+
+}
+@media screen and (max-width:799px) {
+.wavec1{
+    top: -30px;
+}
+}
 
 .bgs-web{
     display: block;
@@ -1497,7 +1564,6 @@ swiper-slide.swiper4 {
     height: auto;
     max-height: 1990px;
     margin: auto;
-    padding-top: 99;
     padding: 0;
 }
 .formgrid::after {
@@ -1523,7 +1589,7 @@ swiper-slide.swiper4 {
 .logoform{
     margin: auto;
     max-width: 266px;
-    margin-top: 130px;
+    margin-top: 100px;
 }
 .form h2{
     font-size: 32px;
@@ -1651,7 +1717,7 @@ font-style: normal;
 font-weight: 400;
 line-height: 150%;
 }
-@media screen and (max-width:1300px) {
+@media screen and (max-width:1240px) {
     .bgs-web{
         display: none;
     }
@@ -1663,7 +1729,7 @@ line-height: 150%;
         object-fit: cover;
         max-width: 2999px;
         height: 100%;
-        max-height: 1300;
+        max-height: 1900;
         flex-shrink: 0;
         z-index: 0;
     }
