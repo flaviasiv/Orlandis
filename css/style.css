@@ -1444,6 +1444,34 @@ swiper-slide.swiper4 {
     cursor: pointer;
     line-height: 180%;
 }
+.textlinecontainer{
+    height: 43px;
+    position: relative;
+    display: flex;
+    display:flex;
+    background-color:#00AEEF;
+    text-align: center;
+    justify-content: center;
+    padding: auto;
+
+}
+.textlinecontainer svg{
+    margin-right: 6px;
+    margin-top: 9px;
+}
+.textlinecontainer p{
+    color:#005AA9;
+    font-size: 21.623px;
+    font-weight: 700;
+    line-height: 200%; /* 21.623px */
+    margin-right: 9px;
+}
+.textlinecontainer span{
+    color: #FFF;
+    font-size: 21.623px;
+    font-weight: 900;
+    line-height: 200%; /* 32.434px */
+}
 
 
 .bgs-web{
@@ -1452,7 +1480,7 @@ swiper-slide.swiper4 {
     position: absolute;
     width: 100%;
     object-fit: cover;
-    max-width: 2999px;
+    max-width: 9999px;
     max-height: 100%;
     flex-shrink: 0;
     z-index: 0;
@@ -1465,12 +1493,23 @@ swiper-slide.swiper4 {
     flex-direction: column;
     position: relative;
     width: 100%;
-    max-width: 2990px;
-    height: 100%;
-    max-height: 1600px;
+    max-width: 9990px;
+    height: auto;
+    max-height: 1990px;
     margin: auto;
-    background-color: #000; /* !! */
+    padding-top: 99;
     padding: 0;
+}
+.formgrid::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:url(../assets/Component6.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: top;
+    top: 0;
+    z-index: 999;
 }
 .form {
     z-index: 1;
@@ -1484,7 +1523,7 @@ swiper-slide.swiper4 {
 .logoform{
     margin: auto;
     max-width: 266px;
-    margin-bottom: 0px;
+    margin-top: 130px;
 }
 .form h2{
     font-size: 32px;
@@ -1498,10 +1537,11 @@ swiper-slide.swiper4 {
     margin-top: 15;
 }
 .form p{
-    max-width: 459px;
+    max-width: 675px;
     margin:  40px auto;
     font-size: 16px;
     font-weight: 400;
+    text-align: center;
     line-height: 130%; 
     letter-spacing: 0.64px;
 }
@@ -1576,7 +1616,41 @@ form {
     justify-content: space-between;
     width: 100%;
     max-width: 905px;
+    margin:auto;
+    padding: 50px 0;
+}
+.mapsfooter .mapinfo{
+    color: #FFF;
+}
+.mapsfooter .mapinfo ul{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 30px;
     margin: auto;
+    list-style: none;
+}
+.mapinfo ul li h2{
+    margin-bottom: 8px;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 100%;
+}
+.mapinfo ul li a{
+    margin-top: 8px;
+    color: #00AEEF;
+    text-decoration: none;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 150%;
+}
+.mapinfo ul li p{
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: 150%;
 }
 @media screen and (max-width:1300px) {
     .bgs-web{
@@ -1598,7 +1672,7 @@ form {
         display: none;
     }
     .formgrid{
-        height: 1100;
+        height: auto;
         margin: auto;
         justify-content: space-around;
     }
@@ -1770,14 +1844,13 @@ footer{
     max-width: 1440px;
     margin: auto;
     justify-content: space-between;
-    padding: 50px 50px 0 0;
+    padding: 50px 0 30px 0;
 }
 .footermenu{
     display: flex;
     justify-content: center;
-    width: 190px;
-    height: 100px;
-    margin-top: 40px;
+    width: auto;
+    height: 90px;
 }
 .footermenu ul li a {
     text-decoration: none;
@@ -1801,23 +1874,19 @@ footer{
 .footerimglogo{
     display: flex;
     justify-content: center;
-    width: 288px;
-    padding: 50 0 20 0; 
+    width: auto;
+    padding: 0; 
 }
 .footerimglogo img{
     display: block;
     margin: auto;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: -50px;
-    width: 130px;
+    margin-top: -20px;
+    width: 248px;
 }
 .adress{
     display: flex;
     justify-content: right;
-    width: 258px;
-    height: 50px;
-    margin: 40px 0;
+    width: auto;
 }
 .adress p{
     width: auto;
@@ -1826,20 +1895,15 @@ footer{
     line-height: 130%;
 }
 .footersocials{
-    justify-content: right;
-    width: 108px;
-    margin-top: 40px;
+    width: auto;
 }
 .footersocials p{
-    text-align: right;
-    margin-right:20px;
     font-size: 16px;
     font-style: normal;
     font-weight: 600;
     line-height: 160%; /* 25.6px */
 }
 .footersocials ul {
-    justify-content: right;
     list-style: none;
     display: flex;
     text-align: center;
@@ -1851,11 +1915,11 @@ footer{
 }
 .rights{
     position: relative;
-    height: 150px;
+    height: 120px;
     width: 100%;
     max-width: 9990px;
     margin: auto;
-    padding: 34px 0 50px 0;
+    padding: 0 0 50px 0;
     background-color: #003D5A;
     align-items: center;
     text-align: center;    
