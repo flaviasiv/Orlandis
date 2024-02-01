@@ -302,12 +302,13 @@ position: absolute;
 }
 .container .faqinfos{
     width: 100%;
-    max-width: 533px;
+    max-width: 573px;
     margin: auto;
     text-align: center;
     margin-top: 157px;
     color: #003D5A;
     justify-content: center;
+    padding: 0 20px;
 }
 .faqinfos h2{
     display: flex;
@@ -357,7 +358,16 @@ line-height: 150%;
     font-weight: 500;
     line-height: 150%
 }
-
+@media screen and (max-width:880px) {
+    .faqs{
+        flex-direction: column;
+    }
+    .faqs p{
+        max-width: 810px;
+        margin-top: 36px;
+    }
+    
+}
 
 
 
@@ -538,7 +548,7 @@ font-style: normal;
 font-weight: 400;
 line-height: 150%;
 }
-@media screen and (max-width:1300px) {
+@media screen and (max-width:1250px) {
     .bgs-web{
         display: none;
     }
@@ -550,7 +560,7 @@ line-height: 150%;
         object-fit: cover;
         max-width: 2999px;
         height: 100%;
-        max-height: 1300;
+        max-height: 1900;
         flex-shrink: 0;
         z-index: 0;
     }
@@ -566,7 +576,8 @@ line-height: 150%;
         max-width: 326px;
         justify-content: center;
         margin: auto;
-    }
+    margin-top: 90px;
+}
     .form{
         width: 370px;
         height: 900px;
@@ -575,7 +586,7 @@ line-height: 150%;
     .form h2{
         font-size: 32;
         line-height: 32px;
-        margin-bottom: 30px;
+        margin-bottom: 0px;
         max-width: 250;
     }
     .form p{
@@ -615,16 +626,10 @@ line-height: 150%;
         border-radius: 5px;
         list-style: none;
         border: 2px solid #fff;
-        color: #070707;
         border-radius: 16px;
         padding: 10px;
         margin: auto;
-        background-color: #003D5A;
         cursor: pointer;
-    }
-    #form button:hover{
-        background-color: #003D5Acc;
-        transition: 0.7s;
     }
     .form h6{
         font-size: 14px;
@@ -634,31 +639,46 @@ line-height: 150%;
         display: flex;
         gap: 20px;
     }
+    .mapsfooter{
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        max-width: 905px;
+        margin:auto;
+        padding: 90px 0 40px;
+    }
+    .map iframe{
+        width:456px;
+         height:290px 
+    }
+    .mapsfooter .mapinfo ul{
+        gap: 20px;
+    }
 }
-
-@media screen and (max-width:770px) {
+@media screen and (max-width:800px) {
     .formimgsbg{
         display: none;
     }
     .formgrid{
-        height: 1000;
+        height: 1660;
         margin: auto;
         justify-content: center;
     }
     .logoform{
         max-width: 236px;
         justify-content: center;
-        margin: 0 65 40 65;
+        margin: auto;
+        margin-top: -50px;
     }
     .form{
         margin: auto;
         width: 370px;
-        height: 900px;
+        height: 600px;
     }
     .form h2{
         font-size: 32;
         line-height: 32px;
-        margin-bottom: 30px;
         max-width: 250;
         margin: auto;
     }
@@ -676,7 +696,7 @@ line-height: 150%;
         justify-content: right;
         flex-direction: column;
         padding: 40px;
-        height: 384px;
+        height: 394px;
         gap: 15px;
     }
     #form input, textarea, select{
@@ -699,20 +719,34 @@ line-height: 150%;
         border-radius: 5px;
         list-style: none;
         border: 2px solid #fff;
-        color: #070707;
         border-radius: 16px;
         padding: 10px;
         margin: auto;
-        background-color: #003D5A;
         cursor: pointer;
-    }
-    #form button:hover{
-        background-color: #003D5Acc;
-        transition: 0.7s;
     }
     .formgroup1, .formgroup2{
         display: flex;
         gap: 20px;
+    }
+    .mapsfooter{
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        width: 100%;
+        max-width: 905px;
+        margin: 64px auto;
+        padding: 0;
+    }
+    .map iframe{
+        width:100%;
+        max-width: 450px;
+         height:290px;
+         margin-bottom: 36px;
+    }
+    .mapsfooter .mapinfo ul{
+        gap: 30px;
     }
 }
 footer{
@@ -820,22 +854,22 @@ footer{
     padding-top: 50px;
 }
 .footerimglogo2{display:none;}
-@media screen and (max-width: 770px) {
+@media screen and (max-width: 870px) {
     footer{
         position: relative;
         width: 100%;
         max-width: 2990px;
-        height: auto;
         margin: auto;
     }
     .footergrid{
         display: flex;
         flex-direction: column;
         width: 100%;
-        max-width: 290px;
+        max-width: 490px;
         margin: auto;
         justify-content: space-between;
         padding: 10 0;
+        height: 820px;
     }
     .footermenu ul li a{
         font-size: 16px;
@@ -848,11 +882,16 @@ footer{
         flex-direction: column;
         justify-content: center;
         width: 100%;
-        height: auto;
+        height: 210px;
         text-align: center;
+    }
+    .footermenu ul{
+        height: auto;
     }
     .adress{
         display: flex;
+        height: 100%;
+        text-align: center;
         margin: auto;
         justify-content: center;
     }
@@ -868,7 +907,7 @@ footer{
         display: flex;
         margin: auto;
         justify-content: center;
-        padding: 20 0 40 0; 
+        padding: 36px 0; 
     }
     .footerimglogo img{
         margin-top: 0px;
@@ -878,12 +917,12 @@ footer{
     }
     .footersocials{
         margin-left: 0px;
-        margin-top: 45px;
+        margin-top: 20px;
         display: flex;
         flex-direction: column;
         justify-content: center;
         width: 100%;
-        height: auto;
+        
         text-align: center;
     }
     .footersocials{
@@ -892,10 +931,6 @@ footer{
     .footersocials p{
         text-align: center;
         margin: 0;
-        font-size: 16px;
-        font-style: normal;
-        font-weight: 600;
-        line-height: 160%; 
     }
     .footersocials ul {
         list-style: none;
@@ -909,18 +944,10 @@ footer{
     .footersocials ul a{
         text-decoration: none;
     }
-    .rights{
-        height: 70px;
-        padding: 30px 0;
-    }
     .rights p{
-        font-size: 11px;
+        font-size: 12px;
     }
 }
-:root {
-    --scroll: 0
-}
-
 .bgs-reviews2{
     position: absolute;
     right: 120;
