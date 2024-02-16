@@ -377,6 +377,16 @@ line-height: 150%;
 
 
 
+fieldset{
+    border: none;
+    border-top: 1px solid gray;
+}
+fieldset div{
+    display: flex;
+    flex-direction: column;
+}
+
+
 .bgs-web{
     display: block;
     pointer-events: none;
@@ -389,9 +399,6 @@ line-height: 150%;
     z-index: 0;
 }
 .bgs-mob{display: none;}
-
-
-
 
 
 footer{
