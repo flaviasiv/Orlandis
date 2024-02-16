@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+/* primary main #95E5FF
+   secondary low #003D5A
+*/
+
 body{
     font-family: 'Urbanist', sans-serif;
 }
@@ -548,6 +552,7 @@ line-height: 120%;
 .selosgrid img{
     width: 100%;
     max-width: 195px;
+    height: 100%;
 }
 .selos .selogoogle{
     margin: auto;
@@ -570,7 +575,6 @@ line-height: 120%;
         margin: auto;
     }
     .selosgrid img{
-        width: 100%;
         max-width: 175px;
     }
     .selosgrid p{
@@ -686,7 +690,6 @@ swiper-container.mySwiper {
   max-width: 300px;
   height: 100%;
   border-radius: 30px;
-  border: 1px solid #95E5FF;
   backface-visibility: hidden;
   overflow: hidden;
 }
@@ -694,6 +697,7 @@ swiper-container.mySwiper {
   border-radius: 30px;
   width: 100%;
   max-width: 300px;
+  border: 1px solid #95E5FF;
   height: 400px;
 }
 
@@ -1194,7 +1198,7 @@ text-align: center;
 
 :root {
     --swiper-navigation-color: #eee;
-    --swiper-pagination-color: #333333cc;
+    --swiper-pagination-color: #8ad4ec;
     --swiper-pagination-bullet-width: 10px;
     --swiper-pagination-bullet-height: 10px;
 }
@@ -1306,7 +1310,7 @@ swiper-slide.swiper2 {
     width: 100%;
     max-width: 9290px;
     margin: auto;
-    padding: 0px 0 120px 0;
+    padding: 0px 0 30px 0;
     margin-top: 180px;
 }
 .wavec1{
@@ -1415,7 +1419,7 @@ swiper-slide.swiper4 {
     font-style: normal;
     font-weight: 700;
     line-height: 100%;
-    margin-bottom: 16px;
+    margin-bottom: 10px;
 }
 .swiper4 h5{
     color: #003D5A;
@@ -1427,17 +1431,17 @@ swiper-slide.swiper4 {
 .story-3{
     max-width: 650px;
     margin: auto;
-    padding: 32px 20px 0 20px;
+    padding: 0;
 }
 .story-3 ul{
     display: flex;
     width: 100%;
-    max-width: 610px;
+    max-width: 600px;
     justify-content: space-between;
     list-style: none;
 }
 .story-3 ul li{
-    height: 140px;
+    height: 95px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -1445,12 +1449,12 @@ swiper-slide.swiper4 {
 }
 .story-3 ul li img{
     width: 100%;
-    max-width: 94px;
+    max-width: 64px;
     margin: auto;
 }
 .story-3 ul li h5{
     color: #003D5A;
-    font-size: 22.02px;
+    font-size: 20px;
     font-style: normal;
     font-weight: 700;
     line-height: 100%; 
@@ -1458,11 +1462,11 @@ swiper-slide.swiper4 {
 .storylinks button{
     display: flex;
     margin: auto;
-    margin-top: 64px;
+    margin-top: 44px;
     text-decoration: none;
     border-radius: 72px;
     background: #003D5A;
-    width: 285px;
+    width: 100%;
     border: none;
     padding: 8px 5px;
     justify-content: center;
@@ -1487,7 +1491,6 @@ swiper-slide.swiper4 {
     text-align: center;
     justify-content: center;
     padding: auto;
-
 }
 .textlinecontainer svg{
     margin-right: 6px;
