@@ -9,6 +9,15 @@ body{
 }
 main{
     background: white;
+    background-image: url(../assets/giftcardbg-w.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: cover;
+}
+@media screen and (max-width:1200px) {
+    main{
+        background-size: 200%;
+    }    
 }
 html{
     scroll-behavior: smooth;
@@ -297,97 +306,218 @@ position: absolute;
   align-items: end;
   }   
 }
-.container{
-    position: relative;
-}
-.container .faqinfos{
-    width: 100%;
-    max-width: 573px;
-    margin: auto;
-    text-align: center;
-    margin-top: 157px;
-    color: #003D5A;
-    justify-content: center;
-    padding: 0 20px;
-}
-.faqinfos h2{
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    margin: auto;
-    margin-bottom: 32px;
-}
-.faqinfos h2 svg{
-    margin: auto;
-    margin-top: 16px;
-    padding-left: 2px;
-}
-.faqinfos p{
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 150%;
-    margin-bottom: 64px;
-}
-
-.faqgrid{
-    width: 100%;
-    max-width: 1500px;
-    margin: auto;
-    padding: 0 50px;
-}
-.faqs{
-    color: #003D5A;
-    display: flex;
-    justify-content: space-between;
-    height: auto;
-    padding-bottom: 48px;
-    padding-top: 24px;
-    border-top: 1px solid #000000a4;
-}
-.faqs h3{
-font-size: 18px;
-font-style: normal;
-font-weight: 700;
-line-height: 150%;
-}
-.faqs p{
-    max-width: 510px;
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 150%
-}
-@media screen and (max-width:880px) {
-    .faqs{
-        flex-direction: column;
-    }
-    .faqs p{
-        max-width: 810px;
-        margin-top: 36px;
-    }
-    
-}
 .maincontainer, .formcontainer, .maintext{
     position: relative;
     width: 100%;
     max-width: 1490px;
     margin: auto;
 }
+.maincontainer{
+    justify-content: center;
+    text-align: center;
+    padding-top: 190px;
+}
+.mainimg{
+    max-width: 400px;
+    margin: auto;
+    margin-bottom: 46px;
+}
+.maininfos{
+    text-align: center;
+    color: #fff;
+}
+.maininfos h2{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    text-align: center;
+}
+.maininfos h2 svg{
+    margin: auto;
+    margin-bottom: 46px;
+    margin-top: 16px;
+}
+.maininfos span{
+    font-size: 16px;
+    line-height: 130%;
+    font-weight: 500;
+}
+.maininfos p{
+    font-size: 24px;
+    line-height: 130%;
+    font-weight: 600;
+    letter-spacing: 4%;
+    max-width: 550px;
+    margin: 36px auto;
+}
 
-
-
+.formcontainer{
+    position: relative;
+    width: 100%;
+    max-width: 1490px;
+    margin: auto;
+    padding: 0 50px;
+}
+form{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    padding:90px;
+    justify-content: center;
+    max-width: 660px;
+    margin: auto;
+    font-family: "Urbanist", sans-serif;
+    border-radius: 30px;
+}
+.firsth2{
+    font-size:40px;
+    color: black;
+    margin: auto;
+    border: none;
+    margin-bottom: 48px;
+    display: flex;
+    align-items: center;
+}
+.firsth2 svg{
+    margin-right: 8px;
+}
 fieldset{
     border: none;
-    border-top: 1px solid gray;
 }
 fieldset div{
     display: flex;
     flex-direction: column;
 }
+fieldset legend{
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 100%;
+    padding-top: 37px;
+}
+form h2{
+    border-bottom: 1px solid #00000060;
+    padding-bottom: 8px;
+    margin-bottom: 20px;
+    margin-top: 16px;
+    color: #005AA9;
+    font-size: 10px;
+    font-weight: 600;
+    line-height: 130%;
+}
+.amount{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #00000050;
+}
+.amount .inputamount{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 20px;
+    align-items: center;
+    flex-shrink: 0;
+    text-align: center;
+}
+.inputamount input{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0px;
+    align-content: center;
+}
+#other_text{
+    margin: auto;
+    margin-left: 20px;
+    border-width: 0; 
+    border: 1px solid #00000050;
+}
+.inputamountother label{
+    display: flex;
+    margin-bottom: 20px;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+input{
+    border: 1px solid #94a3b8;
+    padding: 10; 
+    border-width: 0;     
+    border: 1px solid #00000050;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    border-radius: 5px;
+}
+.textareaContainer {
+	display: block;
+    margin-bottom: 36px;
+}
+textarea { 
+    width: 100%; 
+    margin: 0; 
+    padding: 10; 
+    border-width: 0; 
+    border-radius: 5px;
+    border: 1px solid #00000050;
+}
+
+input:checked{
+    border: 1px solid #003D5A;
+  }
+  /* pseudo-selector */
+  input:checked:before{
+    content: '';
+    display: block;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    border: 1px solid #003D5A;
+    background-color: #003D5A;
+  }
+form button{
+    display: flex;
+    background-color: #0cc0df;
+    color: #082F42;
+    border: none;
+    padding: 16px 32px;
+    border-radius: 30px;
+    margin: auto;
+    text-align: center;
+    cursor: pointer;
+    font-size: 14px;
+    font-family: "Urbanist", sans-serif;
+    font-weight: bold;
+    line-height: 130%;
+}
+form button:hover{
+    background-color: #0ab1ceda;
+    transition: 1s ease-in-out;
+}
+
+.maintext{
+    padding: 36px 50px 100px 50px;
+    text-align: center;
+    color: #0cc0df;
+}
+.maintext ul li{
+    max-width: 550px;
+    margin: auto;
+    font-size: 10px;
+    font-weight: 500;
+    line-height: 130%;
+    height: auto;
+    letter-spacing: 4%;
+}
 
 
-.bgs-web{
+
+/* .bgs-web{
     display: block;
     pointer-events: none;
     position: absolute;
@@ -398,9 +528,7 @@ fieldset div{
     flex-shrink: 0;
     z-index: 0;
 }
-.bgs-mob{display: none;}
-
-
+.bgs-mob{display: none;} */
 footer{
     position: relative;
     width: 100%;
