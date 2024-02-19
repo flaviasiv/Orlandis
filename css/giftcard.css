@@ -14,9 +14,14 @@ main{
     background-size: 100%;
     background-position: cover;
 }
-@media screen and (max-width:1200px) {
+@media screen and (max-width:1350px) {
     main{
         background-size: 200%;
+    }    
+}
+@media screen and (max-width:950px) {
+    main{
+        background-size: 300%;
     }    
 }
 html{
@@ -315,9 +320,9 @@ position: absolute;
 .maincontainer{
     justify-content: center;
     text-align: center;
-    padding-top: 190px;
+    padding-top: 160px;
 }
-.mainimg{
+.mainimg img{
     max-width: 400px;
     margin: auto;
     margin-bottom: 46px;
@@ -330,6 +335,7 @@ position: absolute;
     display: flex;
     flex-direction: column;
     margin: auto;
+    font-size: 32px;
     text-align: center;
 }
 .maininfos h2 svg{
@@ -349,6 +355,23 @@ position: absolute;
     letter-spacing: 4%;
     max-width: 550px;
     margin: 36px auto;
+}
+@media screen and (max-width:950px) {
+    .mainimg img{
+        max-width: 200px;
+    }
+    .maininfos{
+        padding: 0 10px;
+    }
+    .maininfos h2{
+        font-size: 30px;
+    }
+    .maininfos span{
+        font-size: 16px;
+    }
+    .maininfos p{
+        font-size: 18px;
+    }
 }
 
 .formcontainer{
@@ -516,6 +539,22 @@ form button:hover{
 }
 
 
+@media screen and (max-width:950px) {
+    .formcontainer{
+        padding: 0 20px;
+    }
+    form{
+        padding:20px;
+    }
+    .firsth2{
+        font-size:30px;
+        margin-bottom: 20px;
+        padding: 0;
+    }
+    .maintext{
+        padding: 36px 50px 90px 50px;
+    }
+}
 
 /* .bgs-web{
     display: block;
