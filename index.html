@@ -474,19 +474,24 @@
             </h2>
             <p>Are you ready to set up service? Great! Just a few more details and one of our customer service specialists will be in touch with you shortly to schedule your free estimate.</p>
           <form action="https://formsubmit.co/" method="POST" id="form">
-              <div class="formgroup1"><input type="text" required placeholder="First name" autocomplete="on" name="name" id="name"><input type="text" required placeholder="Last name" autocomplete="on" name="name" id="lastname"></div>
-              <input type="email" autocomplete="on" id="email" name="email" placeholder="Email address">
+              <div class="formgroup1"><input type="text" required placeholder="First name*" autocomplete="on" name="name" id="name"><input type="text" required placeholder="Last name*" autocomplete="on" name="name" id="lastname"></div>
+              <input required type="email" autocomplete="on" id="email" name="email" placeholder="Email address*">
               <input type="address" autocomplete="on" id="address" name="address" placeholder="Address">
                             
-              <select id="servicestype" required placeholder="Services" name="services" form="form">
-                <option value="first" selected>-Services-</option>
+              <select id="servicestype" required placeholder="Services*" name="services" form="form">
+                <option value="first" selected style="color: gray;">-Services-*</option>
                 <option value="residential">Residential Cleaning</option>
                 <option value="renovation">After Renovation Cleaning</option>
                 <option value="moving">Move-in / Move-out Cleaning</option>
                 <option value="postconstruction">Post Construction</option>
               </select>
               <input type="hidden" name="_next" value="#http">
-              <button type="submit">Submit</button>
+              <button type="submit" class="btn" onclick="openPopup()">Submit</button>
+              <div class="popup" id="popup">
+                <img src="./assets/orlandis-logoprimary.png" alt="" draggable="false">
+                <h5>Thank you for submitting your request. One of our customer representatives will be in touch with you shortly. </h5>
+                <button class="popupbtnclose" type="button" onclick="closePopup()">Close</button>
+              </div>
               <h6><svg width="25" height="25" viewBox="0 -3 25 25" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <rect width="25" height="25" fill="url(#pattern0)"/>
                 <defs>

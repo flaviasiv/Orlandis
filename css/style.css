@@ -1626,6 +1626,7 @@ swiper-slide.swiper4 {
     height: auto;
     max-height: 1990px;
     margin: auto;
+    font-family: 'Urbanist', sans-serif;
     padding: 0;
 }
 .form {
@@ -1692,7 +1693,7 @@ form {
 #form select option:first{
     color: #000000a4;
 }
-#form button{
+form button{
     margin-top: 15px;
     width: 120px;
     list-style: none;
@@ -1703,7 +1704,7 @@ form {
     background-color: #0CC0DF;
     cursor: pointer;
 }
-#form button:hover{
+form button:hover{
     background-color: #0CC0DFcc;
     transition: 0.7s;
 }
@@ -1767,6 +1768,46 @@ font-size: 16px;
 font-style: normal;
 font-weight: 400;
 line-height: 150%;
+}
+.popup{
+    position: absolute;
+    margin-top: 200px;
+    width: 800px;
+    height: 500px;
+    background-color: #FFF;
+    text-align: center;
+    border-radius: 30px;
+    top: 0%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.1);
+    padding: 10px 20px;
+    z-index: 99999;
+    font-family: 'Urbanist', sans-serif;
+    visibility: hidden;
+}
+.open-popup{
+    visibility: visible;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(1);
+}
+.popup img{
+    width: 300px;
+    z-index: 99999;
+    margin: auto;
+}
+.popup h5{
+    margin-top: 30px;
+    color: #000;
+    font-size: 25px;
+}
+.popupbtnclose{
+    cursor: pointer;
+    width: 200px;
+    padding: 16px;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 30px;
+    border: none;
 }
 @media screen and (max-width:1250px) {
     .bgs-web{
@@ -1840,7 +1881,7 @@ line-height: 150%;
     #form select option:first{
         color: #000000a4;
     }
-    #form button{
+    form button{
         margin-top: 15px;
         width: 180px;
         border-radius: 5px;
@@ -1934,7 +1975,7 @@ line-height: 150%;
     #form select option:first{
         color: #000000a4;
     }
-    #form button{
+    form button{
         margin-top: 15px;
         width: 180px;
         border-radius: 5px;
@@ -1968,6 +2009,46 @@ line-height: 150%;
     }
     .mapsfooter .mapinfo ul{
         gap: 30px;
+    }
+    .popup{
+        position: absolute;
+        margin-top: 200px;
+        width: 390px;
+        height: 300px;
+        background-color: #FFF;
+        text-align: center;
+        border-radius: 30px;
+        top: 0%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(0.1);
+        padding: 10px 20px;
+        z-index: 99999;
+        font-family: 'Urbanist', sans-serif;
+        visibility: hidden;
+    }
+    .open-popup{
+        visibility: visible;
+        top: 50%;
+        transform: translate(-50%, -50%) scale(1);
+    }
+    .popup img{
+        width: 150px;
+        z-index: 99999;
+        margin: auto;
+    }
+    .popup h5{
+        margin-top: 20px;
+        color: #000;
+        font-size: 18px;
+    }
+    .popupbtnclose{
+        cursor: pointer;
+        width: 200px;
+        padding: 16px 8px;
+        font-size: 14px;
+        font-weight: bold;
+        margin-top: 20px;
+        border: none;
     }
 }
 footer{
