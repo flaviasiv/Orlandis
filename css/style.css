@@ -1326,7 +1326,7 @@ swiper-slide.swiper2 {
 }
 .wavec1{
     position: absolute;
-    top: -120px;
+    top: -150px;
     width: 100%;
     max-width: 9999px;
     display: block;
@@ -1531,6 +1531,11 @@ swiper-slide.swiper4 {
     font-weight: 900;
     line-height: 200%; 
 } */
+@media screen and (max-width:1650px) {
+    .wavec1{
+        top: -120px;
+    }
+    }
 @media screen and (max-width:1350px) {
 .wavec1{
     top: -100px;
