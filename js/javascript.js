@@ -44,16 +44,16 @@ var cards = document.querySelectorAll('.card');
 });
 
 //map google
-let map;
-
-async function initMap() {
-  //@ts-ignore
-  const { Map } = await google.maps.importLibrary("maps");
-
-  map = new Map(document.getElementById("map"), {
-    center: { lat: -34.397, lng: 150.644 },
-    zoom: 8,
-  });
-}
-
-initMap();
+//let map;
+//
+//async function initMap() {
+//  //@ts-ignore
+//  const { Map } = await google.maps.importLibrary("map iframe");
+//
+//  map = new Map(document.getElementById("map"), {
+//    center: { lat: -34.397, lng: 150.644 },
+//    zoom: 8,
+//  });
+//}
+//
+//initMap();
