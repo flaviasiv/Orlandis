@@ -566,8 +566,12 @@ line-height: 120%;
         padding: 50px 10px;
     }
     .selos .selogoogle{
+        text-align: center;
         padding: 50px 0;
     }
+    .selos a{
+        text-align: center;
+    } 
     .counter-grid{
         display: flex;
         flex-wrap: wrap;
