@@ -526,12 +526,13 @@ position: absolute;
     padding: 95px 50px;
     color: #006495;
 }
-.selosgrid{
+.counter-grid{
     display: flex;
     flex-wrap: wrap;
     width: 390px;
     row-gap: 40px;
     margin: auto;
+    text-align: center;
 }
 .selosgrid p{
     width: 190px;
@@ -547,10 +548,9 @@ font-style: normal;
 font-weight: 700;
 line-height: 120%; 
 }
-.selosgrid img{
+.counter-item img{
     width: 100%;
     max-width: 195px;
-    height: 100%;
 }
 .selos .selogoogle{
     margin: auto;
@@ -564,7 +564,7 @@ line-height: 120%;
     .selos .selogoogle{
         padding: 50px 0;
     }
-    .selosgrid{
+    .counter-grid{
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
@@ -1579,6 +1579,7 @@ swiper-slide.swiper4 {
     .storygrid{
         flex-direction: column;
         justify-content: center;
+        padding: 20px;
     }
     .storygrid .storymission{
         justify-content: center;
@@ -1914,9 +1915,6 @@ line-height: 150%;
         width:456px;
          height:290px 
     }
-    .mapsfooter .mapinfo ul{
-        gap: 20px;
-    }
 }
 
 @media screen and (max-width:800px) {
@@ -2004,18 +2002,17 @@ line-height: 150%;
     }
     .map iframe{
         width:100%;
-        max-width: 450px;
-         height:290px;
+        max-width: 350px;
+         height:250px;
          margin-bottom: 36px;
-    }
-    .mapsfooter .mapinfo ul{
-        gap: 30px;
+         margin-left: 10px;
+         margin-right: 10px;
     }
     .popup{
         position: absolute;
-        margin-top: 200px;
-        width: 390px;
-        height: 300px;
+        margin-top: 990px;
+        width: 10px;
+        height: 10px;
         background-color: #FFF;
         text-align: center;
         border-radius: 30px;
@@ -2028,6 +2025,9 @@ line-height: 150%;
         visibility: hidden;
     }
     .open-popup{
+        margin-top: 0px;
+        width: 390px;
+        height: 300px;
         visibility: visible;
         top: 50%;
         transform: translate(-50%, -50%) scale(1);
