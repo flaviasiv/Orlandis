@@ -430,6 +430,10 @@ position: absolute;
     margin: auto;
     z-index: 99;
 }
+.bgs-web-aboutt:hover{
+  max-width: 770px;
+  transition: 1s all ease-in-out;
+}
 .about{
     position: relative;
     display: flex;
@@ -479,16 +483,16 @@ position: absolute;
     line-height: 150%;
     font-size: 16px;
 }
-/*.reveal{
+.reveal{
     position: relative;
-    transform: translateX(-150%);
+    transform: translateX(-50%);
     opacity: 0;
     transition: 1s all ease;
 }
 .reveal.active{
     transform: translateX(0%);
     opacity: 1;
-}*/
+}
 @media screen and (max-width:790px) {
     .bgs-web-aboutt{
         max-width: 350px;
@@ -1425,7 +1429,7 @@ swiper-slide.swiper4 {
 }
 .swiper4 img {
   width: 100% !important;
-  max-width: 257px !important;
+  max-width: 257px;
   margin: auto;
   height: 100%;
   max-height: 385px;
@@ -1434,6 +1438,12 @@ swiper-slide.swiper4 {
   object-fit: cover !important;
   object-position: center;
   margin-bottom: 16px;
+}
+.portifoliocard:hover > img{
+  max-width: 287px;
+  margin-left: -1.5%;
+  margin-right: -1.5%;
+  transition: 1s all ease-in-out;
 }
 .swiper4 h3{
     color: #003D5A;
@@ -1911,13 +1921,9 @@ line-height: 150%;
         margin:auto;
         padding: 90px 0 40px;
     }
-    .map iframe{
-        width:456px;
-         height:290px 
-    }
 }
 
-@media screen and (max-width:800px) {
+@media screen and (max-width:860px) {
     .formimgsbg{
         display: none;
     }
@@ -2254,19 +2260,3 @@ footer{
 :root {
     --scroll: 0
 }
-
-/*
-.missionimg.reveal{
-    position: relative;
-    transform: translateX(0%);
-    opacity: 0;
-    width: calc(100% + 10%);
-    height: calc(100% + 10%);
-    transition: 1s all ease;
-}
-.reveal.active{
-    transform: translateX(0%);
-    width: 100%;
-    height: 100%;
-    opacity: 1;
-}*/
