@@ -1737,13 +1737,14 @@ form button:hover{
     padding: 50px 0;
 }
 .mapsfooter .mapinfo{
+    margin-top: -10px;
     color: #FFF;
 }
 .mapsfooter .mapinfo ul{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 30px;
+    gap: 10px;
     margin: auto;
     list-style: none;
 }
