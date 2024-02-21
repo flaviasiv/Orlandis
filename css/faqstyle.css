@@ -299,6 +299,7 @@ position: absolute;
 }
 .container{
     position: relative;
+    background-color: #FFF;
 }
 .container .faqinfos{
     width: 100%;

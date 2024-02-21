@@ -13,6 +13,7 @@ main{
     background-repeat: no-repeat;
     background-size: 100%;
     background-position: cover;
+    padding-bottom: 60px;
 }
 @media screen and (max-width:1350px) {
     main{
@@ -524,7 +525,7 @@ form button:hover{
 }
 
 .maintext{
-    padding: 36px 50px 100px 50px;
+    padding: 36px 50px 50px 50px;
     text-align: center;
     color: #0cc0df;
 }
