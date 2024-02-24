@@ -637,6 +637,11 @@ line-height: 120%;
     line-height: 150%;
     padding-top: 40px;
 }
+.servicestitle p span{
+    color: #00AEEF;
+    padding-top: 5px;
+    font-size: 12px;
+}
 
 
 swiper-container.mySwiper {
@@ -651,6 +656,7 @@ swiper-container.mySwiper {
     max-width: 310px;
     border-radius: 30px;
     margin-left: 0px;
+    padding-bottom: 40px;
   }
 
 .cardcontainer{
@@ -698,13 +704,13 @@ swiper-container.mySwiper {
   height: 100%;
   border-radius: 30px;
   backface-visibility: hidden;
+  border: 1px solid #95E5FF;
   overflow: hidden;
 }
 .thefront img, .card__face--front img{
   border-radius: 30px;
   width: 100%;
   max-width: 300px;
-  border: 1px solid #95E5FF;
   height: 400px;
 }
 
@@ -1498,7 +1504,7 @@ swiper-slide.swiper4 {
 .storylinks button{
     display: flex;
     margin: auto;
-    margin-top: 44px;
+    margin-top: 10px;
     text-decoration: none;
     border-radius: 72px;
     background: #003D5A;
@@ -1517,7 +1523,14 @@ swiper-slide.swiper4 {
     font-weight: 600;
     cursor: pointer;
     line-height: 180%;
-}/* 
+}
+.storylinks button a svg{
+    margin-right: 5px;
+}
+.storym-1:last-child{
+    margin-bottom: 10px;
+}
+/* 
 .textlinecontainer{
     height: 43px;
     position: relative;
