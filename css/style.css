@@ -665,7 +665,7 @@ swiper-container.mySwiper {
     max-width: 9500px;
     margin: -2px auto;
     height: 100%;
-    max-height: 470px;
+    max-height: 490px;
 }
 /* THE MAINCONTAINER HOLDS EVERYTHING */
 .maincontainer{
@@ -675,7 +675,7 @@ swiper-container.mySwiper {
     max-width: 1350px;
     margin: auto;
     height: 100%;
-    max-height: 400px;
+    max-height: 440px;
 }
 
 /* THE CARD HOLDS THE FRONT AND BACK FACES */
