@@ -366,7 +366,18 @@ position: absolute;
 }
 @media screen and (max-width:1250px) {
     .videop img{
-        max-width: 300px;
+      max-width: 300px;
+        width: 100%;
+        height: 100%;
+        margin: auto;
+    }
+    .videop p{
+        width: 100%;
+        max-width: 370px;
+        height: auto;
+        margin: auto;
+        font-size: 40.033px;
+        top: 50%;
     }
 }
 @media screen and (max-width:700px) {
@@ -1632,7 +1643,6 @@ swiper-slide.swiper4 {
     z-index: 0;
 }
 .bgs-mob{display: none;}
-
 
 .formgrid{
     display: flex;
