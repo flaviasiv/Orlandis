@@ -46,7 +46,6 @@ header {
     width: 280px;
 }
 .navbar{   
-    z-index: 999;
     display:flex;
     justify-content: space-between;
     position: fixed;
@@ -64,7 +63,6 @@ header {
     color:#fff;
     display: flex;
     justify-content: space-between;
-    align-items: center;   
     width: 100%;
     max-width: 1200px;
     margin: auto;
@@ -1018,12 +1016,12 @@ swiper-container.mySwiper {
     bottom: -120px;
 }
 }
-@media screen and (max-width:1350px) {
+@media screen and (max-width:1390px) {
 .wavec2{
     bottom: -90px;
 }
 }
-@media screen and (max-width:999px) {
+@media screen and (max-width:1059px) {
 .wavec2{
     bottom: -70px;
 }
@@ -1287,9 +1285,9 @@ swiper-slide.swiper2 {
         transform: translate(-50%,1089%);
     }    
 }
-@media screen and (max-width:970px) {
+@media screen and (max-width:999px) {
     .portifoliocontainer{
-        padding: 0 0 100px 0;
+        padding: 0 0 130px 0;
     }
 }
 @media screen and (max-width:790px) {
@@ -1558,27 +1556,32 @@ swiper-slide.swiper4 {
     font-weight: 900;
     line-height: 200%; 
 } */
-@media screen and (max-width:1650px) {
+@media screen and (max-width:1750px) {
     .wavec1{
         top: -120px;
     }
     }
-@media screen and (max-width:1350px) {
+@media screen and (max-width:1390px) {
 .wavec1{
     top: -100px;
 }
 }
-@media screen and (max-width:999px) {
+@media screen and (max-width:1190px) {
+.wavec1{
+    top: -90px;
+}
+}
+@media screen and (max-width:1043px) {
     .wavec1{
         top: -80px;
     }
-    .storycontainer{
-        margin-top: 0;
-    }
 }
-@media screen and (max-width:810px) {
+@media screen and (max-width:910px) {
     .wavec1{
         top: -50px;
+    }
+    .storycontainer{
+        margin-top: 0;
     }
 
     /*MOBILE*/
