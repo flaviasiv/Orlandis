@@ -2,7 +2,6 @@
 let menu_icon_box = document.querySelector(".btn-toggle");
 let box = document.querySelector(".box");
 
-
 menu_icon_box.onclick = function(){
     menu_icon_box.classList.toggle("active");
     box.classList.toggle("active_box");
@@ -13,6 +12,41 @@ document.onclick = function(e){
         box.classList.remove("active_box");
     }
 }
+// scroll navbar
+const navbar = document.getElementById("homenav");
+
+            let lastScrollTop = 0;
+            addEventListener("scroll", () => {
+                // Current scroll position
+                const scrollTop =
+                    window.pageYOffset || document.documentElement.scrollTop;
+
+                // check scroll direction
+                const distance = scrollTop - lastScrollTop;
+                const currentTop = parseInt(
+                    getComputedStyle(navbar).top.split("px")
+                );
+
+                // Clamp value between -80 and 0
+                let amount = Math.max(
+                    Math.min(
+                        currentTop +
+                            (distance < 0
+                                ? Math.abs(distance) // scrolling up
+                                : -Math.abs(distance)// scrolling down
+                                ) * 40, // (1)
+                        0
+                    ),
+                    -80
+                );
+
+                console.log(amount, currentTop, Math.abs(distance));
+
+                navbar.style.top = `${amount}px`;
+
+                lastScrollTop = scrollTop;
+            });
+
 
 // scroll behavior
 function reveal() {

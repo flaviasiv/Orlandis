@@ -21,7 +21,7 @@
 <body>
     <header> 
         <div id="home">
-            <nav class="navbar">
+            <nav class="navbar" id="homenav">
                     <img src="./assets/logo-f.png" alt="" class="logo-m" draggable="false">
               <div class="btn-toggle menu_icon_box">
                   <div class="line1"></div>
@@ -202,11 +202,11 @@
           <img src="./assets/preferencebg.png" alt="" class="bgs-web" draggable="false"> 
 
           <div class="preference">
-             <h3>Reasons to love us:  
+             <h2>Reasons to love Orlandi’s:  
               <svg xmlns="http://www.w3.org/2000/svg" width="63" height="5" viewBox="0 0 63 5" fill="none">
               <path d="M0.5 2.5C0.5 1.11929 1.61929 0 3 0H60C61.3807 0 62.5 1.11929 62.5 2.5C62.5 3.88071 61.3807 5 60 5H3C1.61929 5 0.5 3.88071 0.5 2.5Z" fill="#00AEEF"/>
             </svg>      
-            </h3> 
+            </h2> 
             <p>When you choose to work with Orlandis Cleaning, you choose a partner who is committed to delivering exceptional results to you.</p>
           </div>
           <div class="preferenceprinc">
@@ -582,7 +582,7 @@
                 <div class="storylinks">
                   <button><a href="https://drive.usercontent.google.com/u/0/uc?id=1YW0Sp8NmDk6O6Gkve04ucGsrz2tCm-lg&export=download" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                     <path d="M5.99997 18H18V20H5.99997V18ZM11 4V12.586L6.70697 8.293L5.29297 9.707L12 16.414L18.707 9.707L17.293 8.293L13 12.586V4H11Z" fill="white"/>
-                  </svg>Access our complete Code of Conduct</a></button>
+                  </svg>Download our Code of Conduct</a></button>
                  
                 <!--<p>Today, we train our cleaning teams to continue with what we started. We are dedicated to delivering trust worth, efficient and good-quality cleaning service with integrity to our valued customers. We take pride in our work and loving services as if your home were our own and that is what has made Orlandi’s Cleaning what it is today.</p> -->
               </div>
@@ -613,7 +613,7 @@
             <p>Are you ready to set up service? Great! Just a few more details and one of our customer service specialists will be in touch with you shortly to schedule your free estimate.</p>
           <form action="https://formsubmit.co/orlandiscleaning@gmail.com" method="POST" id="form">
               <div class="formgroup1"><input type="text" required placeholder="First name*" autocomplete="on" name="name" id="name"><input type="text" required placeholder="Last name*" autocomplete="on" name="name" id="lastname"></div>
-              <input required type="email" autocomplete="on" id="email" name="email" placeholder="Email address*">
+              <input required type="email" autocomplete="on" id="email" name="email" placeholder="Email address*" minlength="5" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$">
               <input type="address" autocomplete="on" id="address" name="address" placeholder="Address">
                             
               <select id="servicestype" required placeholder="Services*" name="services" form="form">
@@ -727,8 +727,7 @@
           <p>ORLANDI’S CLEANING 
             <br>
             orlandiscleaning@gmail.com
-            <br>
-            (614) 408-3833
+            <br> <br>
           </p>
           <p>Follow Us</p>
           <ul>

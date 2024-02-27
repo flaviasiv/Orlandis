@@ -16,26 +16,34 @@ main{
 }
 html{
     scroll-behavior: smooth;
+    scroll-padding-top: 30px; 
 }
 header {
     position: relative;
     display:flex;
     justify-content: space-between;
     width:100%;
-    max-width:3900px;
+    max-width:9999px;
     margin: auto;
-    background-color:transparent;
     height: 0px;
     z-index: 99999;
 }
-#home:before {
+#home{
+    position: fixed;
+    height: 80px;
+    left: 0;
+    right: 0;
+    width: 9999px;
+    z-index: 99;
+    box-sizing: border-box;
+}
+#home::before {
     content: '';
     position: fixed;
     height: 80px;
     left: 0;
     right: 0;
-    width: 3900px;
-    background-color:transparent;
+    width: 9999px;
     z-index: 99;
     box-sizing: border-box;
 }
@@ -57,10 +65,13 @@ header {
     width: 100%;
     max-width: 1400px;
     margin: auto;
-    padding: 20px 50px 5px 0px;
+    background-color:#33333340;
+    padding: 0px 50px 5px 0px;
+    height: 80px;
+    scroll-behavior: smooth;
+    transition: 0.7s;
 } 
 .menu-links{
-    color:#fff;
     display: flex;
     justify-content: space-between;
     width: 100%;
@@ -225,17 +236,17 @@ position: absolute;
       padding: 0px;
   }
   .menu-links{
-    background-color:transparent;
+    background-color:#33333340;
   flex-direction: column;
   align-items:center;
-  margin-top: 0px;
+  margin-top: 80px;
   width: 100%;
   margin-left: 0;
   margin-right: 0;
-  padding-top: 50px;
+  padding-top: 0px;
   border-bottom-right-radius: 32px;
   border-bottom-left-radius: 32px;
-  height:330px
+  height:380px
   }
   .menu-links ul{
       display: block;
@@ -294,7 +305,7 @@ position: absolute;
   #home {
   display:flex;
   flex-direction:column;
-  max-width: 400px;
+  max-width: 1400px;
   text-align: right;
   align-items: end;
   }   
@@ -859,9 +870,9 @@ swiper-container.mySwiper {
 .preferencecontainer .bgs-web{
     max-height: 900px;
 }
-.preference h3{
+.preference h2{
     z-index: 9;
-    width: 349px;
+    width: 459px;
     color: #fff;
     text-align: center;
     margin: auto;
@@ -869,7 +880,7 @@ swiper-container.mySwiper {
     flex-direction: column;
     font-size: 40px;
     font-style: normal;
-    font-weight: 700;
+    font-weight: 600;
     line-height: 100%;
     margin: auto;
 }
@@ -883,7 +894,7 @@ swiper-container.mySwiper {
     margin-top: 32px;
     max-width: 472px;
 }
-.preference h3 svg{
+.preference h2 svg{
     margin: auto;
     margin-top: 14px;
 }
@@ -951,8 +962,8 @@ swiper-container.mySwiper {
     align-items: center;
     padding: 0 0;
 }
-.preference h3{
-    width: 252px;
+.preference h2{
+    width: 352px;
     font-size: 30px;
 }
 .preference p{
@@ -1800,7 +1811,7 @@ font-style: normal;
 font-weight: 400;
 line-height: 150%;
 }
-.popup{
+/* .popup{
     position: absolute;
     margin-top: 200px;
     width: 800px;
@@ -1839,7 +1850,7 @@ line-height: 150%;
     font-weight: bold;
     margin-top: 30px;
     border: none;
-}
+} */
 @media screen and (max-width:1250px) {
     .bgs-web{
         display: none;
@@ -2033,7 +2044,7 @@ line-height: 150%;
          margin-left: 10px;
          margin-right: 10px;
     }
-    .popup{
+    /* .popup{
         position: absolute;
         margin-top: 990px;
         width: 10px;
@@ -2075,7 +2086,7 @@ line-height: 150%;
         font-weight: bold;
         margin-top: 20px;
         border: none;
-    }
+    } */
 }
 footer{
     position: relative;
