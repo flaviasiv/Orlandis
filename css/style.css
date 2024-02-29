@@ -65,7 +65,7 @@ header {
     width: 100%;
     max-width: 9999px;
     margin: auto;
-    background-color:#33333340;
+    background-color:#003e5a27;
     padding: 0px 50px 5px 0px;
     height: 80px;
     scroll-behavior: smooth;
@@ -237,7 +237,7 @@ position: absolute;
       padding: 0px;
   }
   .menu-links{
-    background-color:#33333340;
+    background-color:#003e5a27;
   flex-direction: column;
   align-items:center;
   margin-top: 80px;
