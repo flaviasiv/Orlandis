@@ -1714,7 +1714,7 @@ form {
     gap: 20px;
     width:700px;
     max-width: 100%;
-    height: 450px;
+    height: 499px;
     background-color: #FFF;
     border-radius: 25px;
     padding: 70px 80px;
@@ -1884,7 +1884,7 @@ line-height: 150%;
 }
     .form{
         width: 370px;
-        height: 900px;
+        height: 970px;
         margin: 0 auto;
     }
     .form h2{
@@ -1907,7 +1907,7 @@ line-height: 150%;
         justify-content: right;
         flex-direction: column;
         padding: 40px;
-        height: 384px;
+        height: 450px;
         gap: 15px;
     }
     #form input, textarea, select{
@@ -1959,7 +1959,7 @@ line-height: 150%;
         display: none;
     }
     .formgrid{
-        height: 1660;
+        height: 1690;
         margin: auto;
         justify-content: center;
     }
@@ -1994,7 +1994,7 @@ line-height: 150%;
         justify-content: right;
         flex-direction: column;
         padding: 40px;
-        height: 394px;
+        height: 430px;
         gap: 15px;
     }
     #form input, textarea, select{

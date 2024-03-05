@@ -443,7 +443,6 @@
         </div>
         <div class="portifoliocontainer" id="gallery">
           <div class="portifolio">
-            <!-- <img src="./assets/licensed-n-insured.png" alt="" class="licensed" draggable="false"> -->
             <div class="portifoliotitle">
                 <h2>Gallery
                   <svg xmlns="http://www.w3.org/2000/svg" width="63" height="5" viewBox="0 0 63 5" fill="none">
@@ -452,11 +451,6 @@
                 </h2> 
             </div>
             <swiper-container class="mySwiper2 reveal" pagination="true" pagination-clickable="true" space-between="10" slides-per-view="auto" loop="true" navigation="true" autoplay-delay="5000">
-            <!--  <swiper-slide class="swiper2">
-                <div class="portifoliocard">
-                  <img src="./assets/1portifolio.png" alt="" draggable="false">
-                </div> 
-              </swiper-slide>-->
               <swiper-slide class="swiper2">
                 <div class="">
                   <img src="./assets/2portifolio.png" alt="" draggable="false">
@@ -584,8 +578,6 @@
                   <button><a href="https://drive.usercontent.google.com/u/0/uc?id=1YW0Sp8NmDk6O6Gkve04ucGsrz2tCm-lg&export=download" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                     <path d="M5.99997 18H18V20H5.99997V18ZM11 4V12.586L6.70697 8.293L5.29297 9.707L12 16.414L18.707 9.707L17.293 8.293L13 12.586V4H11Z" fill="white"/>
                   </svg>Download our Code of Conduct</a></button>
-                 
-                <!--<p>Today, we train our cleaning teams to continue with what we started. We are dedicated to delivering trust worth, efficient and good-quality cleaning service with integrity to our valued customers. We take pride in our work and loving services as if your home were our own and that is what has made Orlandi’s Cleaning what it is today.</p> -->
               </div>
               </div>
             </div>
@@ -613,8 +605,12 @@
             </h2>
             <p>Are you ready to set up service? Great! Just a few more details and one of our customer service specialists will be in touch with you shortly to schedule your free estimate.</p>
           <form action="https://formsubmit.co/orlandiscleaning@gmail.com" method="POST" id="form">
-              <div class="formgroup1"><input type="text" required placeholder="First name*" autocomplete="on" name="name" id="name"><input type="text" required placeholder="Last name*" autocomplete="on" name="name" id="lastname"></div>
-              <input required type="email" autocomplete="on" id="email" name="email" placeholder="Email address*" minlength="5" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$">
+              <div class="formgroup1">
+              <input type="text" required placeholder="First name*" autocomplete="on" name="name" id="name">
+              <input type="text" required placeholder="Last name*" autocomplete="on" name="name" id="lastname">
+              </div>
+              <input required type="tel" autocomplete="on" id="phone" name="phone" placeholder="Phone*" minlength="5">
+              <input type="email" autocomplete="on" id="email" name="email" placeholder="Email address" minlength="5" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$">
               <input type="address" autocomplete="on" id="address" name="address" placeholder="Address">
                             
               <select id="servicestype" required placeholder="Services*" name="services" form="form">
