@@ -33,19 +33,19 @@
                 </div>
                 <div class="menu-linksbtn">
                   <ul>
-                    <li><a href="#"> Home </a></li>
-                    <li><a href="#about"> About </a></li>
-                    <li><a href="#services"> Services </a></li>
-                    <li><a href="#gallery"> Gallery </a></li>
-                    <li><a href="#reviews"> Reviews </a></li>
-                    <li><a href="#story"> Our Story </a></li>
+                    <li><a href="./index.html"> Home </a></li>
+                    <li><a href="./index.html#about"> About </a></li>
+                    <li><a href="./index.html#services"> Services </a></li>
+                    <li><a href="./index.html#gallery"> Gallery </a></li>
+                    <li><a href="./index.html#reviews"> Reviews </a></li>
+                    <li><a href="./index.html#story"> Our Story </a></li>
                     <li><a href="./faq.html"> FAQ </a></li>
-                    <li><a href="./giftcard.html"> Gift Card </a></li>
+                    <li><a href="#"> Gift Card </a></li>
                   </ul>
                 </div>
                 <div class="menusocial">
                   <ul>
-                    <li><a href="#contact">Get in touch</a></li>
+                    <li><a href="./index.html#contact">Get in touch</a></li>
     
                     <li><a href="https://www.facebook.com/OrlandisCleaning/" target="_blank"><svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path fill-rule="evenodd" clip-rule="evenodd" d="M3.79932 0.335693H21.5295C23.6278 0.335693 25.3288 2.03671 25.3288 4.13501V21.8652C25.3288 23.9635 23.6278 25.6645 21.5295 25.6645L14.6432 25.6645V16.6609H17.5916L18.1556 13.0001H14.6432V10.6255C14.6432 9.62621 15.133 8.6467 16.7061 8.6467H18.304V5.53007C18.304 5.53007 16.8545 5.28272 15.4694 5.28272C12.5754 5.28272 10.6856 7.03397 10.6856 10.21V13.0001H7.47002V16.6609H10.6856V25.6645L3.79932 25.6645C1.70101 25.6645 0 23.9635 0 21.8652V4.13501C0 2.03671 1.70101 0.335693 3.79932 0.335693Z" fill="#003D5A"/>
@@ -97,9 +97,9 @@
                   <legend>Purchased By</legend>
                   <h2>Input the details for who is purchasing the gift card</h2>
                   <div>
-                    <input type="text" required placeholder="First name*" autocomplete="on" name="firstName" id="sendername">
-                    <input type="text" required placeholder="Last name*" autocomplete="on" name="LastName" id="senderlastname">
-                    <input type="email" autocomplete="on" id="senderemail" name="email" placeholder="Email address">
+                    <input type="text" required placeholder="First name*" autocomplete="on" name="FirstName" id="sendername">
+                    <input type="text" required placeholder="Last name*" autocomplete="on" name="LastName" id="senderlastname" pattern="{3}">
+                    <input type="email" autocomplete="on" id="senderemail" name="email" placeholder="Email Address">
                     <input type="tel" required autocomplete="on" placeholder="Mobile Phone*" id="senderphone" name="phone">
                     <input type="address" autocomplete="on" id="senderaddress" name="address" placeholder="Address">
                   </div>
@@ -109,8 +109,8 @@
                   <h2>Input the details for who you are purchasing gift</h2>
                   <div>
                     <input form="formGiftCard" type="text" required placeholder="First name*" autocomplete="on" name="firstName" id="receivername">
-                    <input form="formGiftCard" type="text" required placeholder="Last name*" autocomplete="on" name="LastName" id="receiverlastname">
-                    <input form="formGiftCard" type="email" autocomplete="on" id="receiveremail" name="email" placeholder="Email address*">
+                    <input form="formGiftCard" type="text" required placeholder="Last name*" autocomplete="on" name="LastName" id="receiverlastname" pattern="{3}">
+                    <input form="formGiftCard" type="email" autocomplete="on" id="receiveremail" name="email" placeholder="Email address*" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$">
                     <input form="formGiftCard" type="tel" required autocomplete="on" placeholder="Mobile Phone*" id="receiverphone" name="phone">
                     <input form="formGiftCard" type="address" required autocomplete="on" id="receiveraddress" name="receiveraddress" placeholder="Address*">
                     <input form="formGiftCard" type="text" required autocomplete="off" id="receiverstreet" name="receiverstreet" placeholder="Street Address">
@@ -139,10 +139,10 @@
                       </div>
                 </fieldset>
                 <fieldset class="textareaContainer">
-                    <textarea style="resize:none;" wrap="soft" required name="message" id="message" rows="10" form="formGiftCard" placeholder="Note for Card"></textarea><label for="message" style="color:#333333a4;font-size:10px;">0 of 250 max characters</label>
+                    <textarea style="resize:none;" wrap="soft" name="message" id="message" rows="10" form="formGiftCard" placeholder="Note for Card"></textarea><label for="message" style="color:#333333a4;font-size:10px;">0 of 250 max characters</label>
                 </fieldset>
                 <fieldset class="textareaContainer">
-                    <textarea style="resize:none;" wrap="soft" required name="observation" id="observation" rows="2" form="formGiftCard" placeholder="Enter any special instruction, message or concerns about the services."></textarea><label for="message"></label>
+                    <textarea style="resize:none;" wrap="soft" name="observation" id="observation" rows="2" form="formGiftCard" placeholder="Enter any special instruction, message or concerns about the services."></textarea><label for="message"></label>
                 </fieldset>
                 <div>
                   <input type="hidden" name="_next" value="https://orlandiscleaning.com/">
@@ -167,7 +167,7 @@
                 <li>
                   <a href="./index.html">Home</a></li>
                 <li>
-                  <a href="./index.html">About</a></li>
+                  <a href="./index.html#about">About</a></li>
                 <li>
                   <a href="./index.html#gallery">Gallery</a></li>
                 <li>
