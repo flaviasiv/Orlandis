@@ -1540,34 +1540,6 @@ swiper-slide.swiper4 {
 .storym-1:last-child{
     margin-bottom: 10px;
 }
-/* 
-.textlinecontainer{
-    height: 43px;
-    position: relative;
-    display: flex;
-    display:flex;
-    background-color:#00AEEF;
-    text-align: center;
-    justify-content: center;
-    padding: auto;
-}
-.textlinecontainer svg{
-    margin-right: 6px;
-    margin-top: 9px;
-}
-.textlinecontainer p{
-    color:#005AA9;
-    font-size: 21.623px;
-    font-weight: 700;
-    line-height: 200%;
-    margin-right: 9px;
-}
-.textlinecontainer span{
-    color: #FFF;
-    font-size: 21.623px;
-    font-weight: 900;
-    line-height: 200%; 
-} */
 @media screen and (max-width:1750px) {
     .wavec1{
         top: -120px;
