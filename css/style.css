@@ -495,8 +495,8 @@ position: absolute;
 }
 .reveal{
     position: relative;
-    transform: translateX(-50%);
-    opacity: 0;
+    transform: translateX(-20%);
+    opacity: 0.4;
     transition: 1s all ease;
 }
 .reveal.active{
