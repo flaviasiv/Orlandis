@@ -333,7 +333,7 @@ position: absolute;
 .maincontainer{
     justify-content: center;
     text-align: center;
-    padding-top: 160px;
+    padding-top: 150px;
 }
 .mainimg img{
     max-width: 400px;
@@ -353,13 +353,26 @@ position: absolute;
 }
 .maininfos h2 svg{
     margin: auto;
-    margin-bottom: 46px;
+    margin-bottom: 36px;
     margin-top: 16px;
 }
 .maininfos span{
     font-size: 16px;
     line-height: 130%;
     font-weight: 500;
+}
+.listareas{
+    display: flex;
+    width: 100%;
+    max-width: 1500px;
+    margin: auto;
+    justify-content: center;
+    text-align: left;
+    gap: 28px;
+    margin-top: 26px;
+}
+.maininfos ul{
+    text-decoration: dotted;
 }
 .maininfos p{
     font-size: 24px;
@@ -476,7 +489,7 @@ form h2{
     align-content: center;
 }
 
-input{
+input, select{
     border: 1px solid #94a3b8;
     padding: 10; 
     border-width: 0;     
@@ -489,6 +502,8 @@ input{
     align-items: center;
     flex-shrink: 0;
     border-radius: 5px;
+    font-family: 'Urbanist', sans-serif;
+    font-weight: 600;
 }
 .textareaContainer {
 	display: block;
