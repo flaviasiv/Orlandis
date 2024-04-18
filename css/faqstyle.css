@@ -3,7 +3,6 @@
     padding: 0;
     box-sizing: border-box;
 }
-
 body{
     font-family: 'Urbanist', sans-serif;
 }
@@ -43,12 +42,6 @@ header {
     z-index: 99;
     box-sizing: border-box;
 }
-.nonebar{
-    display: block;
-    position: relative;
-    background-color: transparent;
-    width: 200px;
-}
 .navbar{   
     display:flex;
     justify-content: space-between;
@@ -61,12 +54,18 @@ header {
     width: 100%;
     max-width: 9999px;
     margin: auto;
-    background-color:#33333340;
-    padding: 0px 50px 5px 0px;
+    background-color:#003D5A;
+    padding: 0 50px 0 50px;
     height: 80px;
     scroll-behavior: smooth;
     transition: 0.7s;
 } 
+.nonebar{
+    display: flex;
+    position: relative;
+    background-color: transparent;
+    width:109px;
+}
 .menu-links{
     display: flex;
     justify-content: space-between;
@@ -80,13 +79,13 @@ header {
     display: flex;
     margin: 0 auto;
     justify-content:space-between;
-    width:600px;
+    width:570px;
     text-align: center;
 }
 .menu-linksbtn a {
     display:block;
     text-align: center;
-    color:#fff;
+    color:#95E5FF;
     text-decoration:none;
     font-family: 'Urbanist', sans-serif;
     font-size: 16px;
@@ -96,7 +95,7 @@ header {
     letter-spacing:1px
 }
 .menu-linksbtn a:hover{
-    color: #95E5FF;
+    color: #FFF;
     transition: 0.5s ease-in-out;
     letter-spacing: 0.7;
 }
@@ -109,8 +108,9 @@ header {
     align-items: center;
     margin: 0 auto;
     justify-content:space-between;
-    width:200px;
+    width:auto;
     text-align: center;
+    gap: 8px;
 }
 .menusocial ul a {
     text-decoration:none;
@@ -119,23 +119,20 @@ header {
 }
 .menusocial li:first-child{
     display: inline-flex;
-    margin-right: 5px;
-    background-color: #003D5A;
+    background-color: #95E5FF;
     border-radius: 20px;
 }
 .menusocial a:first-child{
-    color: #fff;
+    color: #003D5A;
     font-family: 'Urbanist', sans-serif;
     font-size: 16px;
     font-style: normal;
-    font-weight: 400;
+    font-weight: 700;
     line-height: 150%;
     align-items: center;
     padding: 8px 0px;
     width: 119px;
 }
-
-
 .menu-linksbtn a:hover,
 .menu-linksbtn a.active {
   transition: 0.5s ease-out;
@@ -145,9 +142,9 @@ header {
 .logo-m{
 z-index: 9;
 display:block;
-width: 75px;
+width: 70px;
 top: -25px;
-left: 25px;
+left: 0;
 position: absolute;
 }
 .logow{display: none;}
@@ -233,7 +230,7 @@ position: absolute;
       padding: 0px;
   }
   .menu-links{
-    background-color:#33333340;
+    background-color:#003D5A;
   flex-direction: column;
   align-items:center;
   margin-top: 80px;
@@ -247,7 +244,6 @@ position: absolute;
   }
   .menu-links ul{
       display: block;
-      margin-right: 10px;
   }
   .menu-links a {
   padding:.25rem 2rem
@@ -298,6 +294,7 @@ position: absolute;
   }
   .navbar {
   padding:0px 0px;
+  border-radius: 0;
   }
   #home {
   display:flex;
@@ -327,15 +324,15 @@ position: absolute;
     text-align: center;
     margin: auto;
     margin-bottom: 32px;
+    font-size: 40px;
+    line-height: 100%;
 }
 .faqinfos h2 svg{
     margin: auto;
     margin-top: 16px;
-    padding-left: 2px;
 }
 .faqinfos p{
     font-size: 16px;
-    font-style: normal;
     font-weight: 500;
     line-height: 150%;
     margin-bottom: 64px;
@@ -527,13 +524,14 @@ form {
     padding: 50px 0;
 }
 .mapsfooter .mapinfo{
+    margin-top: -10px;
     color: #FFF;
 }
 .mapsfooter .mapinfo ul{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 30px;
+    gap: 10px;
     margin: auto;
     list-style: none;
 }
@@ -559,7 +557,7 @@ font-style: normal;
 font-weight: 400;
 line-height: 150%;
 }
-@media screen and (max-width:1250px) {
+@media screen and (max-width:1270px) {
     .bgs-web{
         display: none;
     }
@@ -667,6 +665,12 @@ line-height: 150%;
         gap: 20px;
     }
 }
+@media screen and (max-width:960px) {
+    .mapsfooter{
+        max-width: 1005px;
+        padding: 90px 10px;
+    }    
+}
 @media screen and (max-width:800px) {
     .formimgsbg{
         display: none;
@@ -752,9 +756,11 @@ line-height: 150%;
     }
     .map iframe{
         width:100%;
-        max-width: 450px;
-         height:290px;
+        max-width: 350px;
+         height:250px;
          margin-bottom: 36px;
+         margin-left: 10px;
+         margin-right: 10px;
     }
     .mapsfooter .mapinfo ul{
         gap: 30px;
@@ -763,7 +769,7 @@ line-height: 150%;
 footer{
     position: relative;
     width: 100%;
-    max-width: 2990px;
+    max-width: 9990px;
     margin: auto;
     height: auto;
     background-color: #003D5A;
@@ -775,7 +781,7 @@ footer{
     max-width: 1440px;
     margin: auto;
     justify-content: space-between;
-    padding: 50px 0 30px 0;
+    padding: 50px;
 }
 .footermenu{
     display: flex;
@@ -822,13 +828,19 @@ footer{
 .adress p{
     width: auto;
     font-size: 16px;
-    font-weight: 600;
+    font-weight: 500;
     line-height: 130%;
 }
 .footersocials{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     width: auto;
 }
 .footersocials p{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
     font-size: 16px;
     font-style: normal;
     font-weight: 600;
@@ -839,7 +851,7 @@ footer{
     display: flex;
     text-align: center;
     gap: 18px;
-    padding-top: 18px;
+    padding-top: 10px;
 }
 .footersocials ul a{
     text-decoration: none;
@@ -893,7 +905,7 @@ footer{
         flex-direction: column;
         justify-content: center;
         width: 100%;
-        height: 210px;
+        height: 200px;
         text-align: center;
     }
     .footermenu ul{
@@ -904,6 +916,7 @@ footer{
         height: 100%;
         text-align: center;
         margin: auto;
+        margin-top: 20px;
         justify-content: center;
     }
     .adress p{

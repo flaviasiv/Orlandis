@@ -3,11 +3,9 @@
     padding: 0;
     box-sizing: border-box;
 }
-
 /* primary main #95E5FF
    secondary low #003D5A
 */
-
 body{
     font-family: 'Urbanist', sans-serif;
 }
@@ -37,7 +35,7 @@ header {
     z-index: 99;
     box-sizing: border-box;
 }
-#home::before {
+/* #home::before {
     content: '';
     position: fixed;
     height: 80px;
@@ -46,13 +44,7 @@ header {
     width: 9999px;
     z-index: 99;
     box-sizing: border-box;
-}
-.nonebar{
-    display: block;
-    position: relative;
-    background-color: transparent;
-    width: 200px;
-}
+} */
 .navbar{   
     display:flex;
     justify-content: space-between;
@@ -63,14 +55,21 @@ header {
     top: 0;
     z-index: 99;
     width: 100%;
-    max-width: 9999px;
-    margin: auto;
-    background-color:#003e5a27;
-    padding: 0px 50px 5px 0px;
+    max-width: 1300px;
+    margin: 10px auto;
+    border-radius: 50px;
+    background-color:#cecece25;
+    padding: 0 50px 0 50px;
     height: 80px;
     scroll-behavior: smooth;
     transition: 0.7s;
 } 
+.nonebar{
+    display: flex;
+    position: relative;
+    background-color: transparent;
+    width:109px;
+}
 .menu-links{
     display: flex;
     justify-content: space-between;
@@ -84,7 +83,7 @@ header {
     display: flex;
     margin: 0 auto;
     justify-content:space-between;
-    width:600px;
+    width:570px;
     text-align: center;
 }
 .menu-linksbtn a {
@@ -113,8 +112,9 @@ header {
     align-items: center;
     margin: 0 auto;
     justify-content:space-between;
-    width:200px;
+    width:auto;
     text-align: center;
+    gap: 8px;
 }
 .menusocial ul a {
     text-decoration:none;
@@ -123,7 +123,6 @@ header {
 }
 .menusocial li:first-child{
     display: inline-flex;
-    margin-right: 5px;
     background-color: #003D5A;
     border-radius: 20px;
 }
@@ -138,8 +137,6 @@ header {
     padding: 8px 0px;
     width: 119px;
 }
-
-
 .menu-linksbtn a:hover,
 .menu-linksbtn a.active {
   transition: 0.5s ease-out;
@@ -149,9 +146,9 @@ header {
 .logo-m{
 z-index: 9;
 display:block;
-width: 75px;
+width: 70px;
 top: -25px;
-left: 25px;
+left: 0;
 position: absolute;
 }
 .logow{display: none;}
@@ -237,7 +234,7 @@ position: absolute;
       padding: 0px;
   }
   .menu-links{
-    background-color:#003e5a27;
+    background-color:#cecece25;
   flex-direction: column;
   align-items:center;
   margin-top: 80px;
@@ -251,7 +248,6 @@ position: absolute;
   }
   .menu-links ul{
       display: block;
-      margin-right: 10px;
   }
   .menu-links a {
   padding:.25rem 2rem
@@ -302,6 +298,7 @@ position: absolute;
   }
   .navbar {
   padding:0px 0px;
+  border-radius: 0;
   }
   #home {
   display:flex;
@@ -526,6 +523,7 @@ position: absolute;
 }
 
 .seloscontainer{
+    position: relative;
     width: 100%;
     max-width: 9990px;
     margin: auto;
@@ -537,7 +535,7 @@ position: absolute;
     margin: auto;
     display: flex;
     justify-content: space-between;
-    padding: 95px 50px;
+    padding:50px 50px;
     color: #006495;
 }
 .counter-grid{
@@ -608,14 +606,14 @@ line-height: 120%;
     position: relative;
     background-color: #003D5A;
     width: 100%;
-    max-width: 3290px;
+    max-width: 9990px;
     margin: auto;
 }
 .services{
     width: 100%;
     max-width: 3900px;
     margin: auto;
-    padding: 40px 0;
+    padding: 0 0 40px;
     color: #fff
 }
 .servicestitle{
@@ -634,7 +632,7 @@ line-height: 120%;
     font-weight: 700;
     line-height: 100%; 
     margin-bottom: 0px;
-    padding-top:80px;
+    padding-top:0px;
 }
 .servicestitle h2 svg{
     margin-top: 16px;
@@ -737,16 +735,16 @@ swiper-container.mySwiper {
   border-radius: 30px;
   backface-visibility: hidden;
   overflow: hidden;
-  background: #003D5A;
+  background: #95E5FF;
   padding: 30px 20px;
-  border: 1px solid #95E5FF;
+  border: 1px solid #003D5A;
   text-align: center;
 }
 
 
 /*This block (starts here) is merely styling for the flip card, and is NOT an essential part of the flip code */
 .theback h2{
-  color: #95E5FF;
+  color: #003D5A;
   margin-bottom: 30px;
   font-size: 12px;
   font-style: normal;
@@ -761,9 +759,9 @@ swiper-container.mySwiper {
 .theback p{
   font-size: 14px;
   font-style: normal;
-  font-weight: 500;
+  font-weight: 600;
   line-height: 130%;
-  color: #FFF;
+  color: #003D5A;
   display: flex;
   flex-direction: column;
   margin: auto;
@@ -873,7 +871,7 @@ swiper-container.mySwiper {
 }
 .preference h2{
     z-index: 9;
-    width: 459px;
+    width: 900px;
     color: #fff;
     text-align: center;
     margin: auto;
@@ -939,11 +937,11 @@ swiper-container.mySwiper {
 }
 @media screen and (max-width: 1270px) {
     .preferencecontainer{
-        max-height: 700px;
+        max-height: 750px;
     }
     .preference{
         margin: auto;
-        padding: 70 10;
+        padding: 70px 10px;
     }
     .preferencecontainer .preferencebgw{
         max-height: 800px
@@ -955,7 +953,7 @@ swiper-container.mySwiper {
     }
     .preference{
         margin: auto;
-        padding: 40 10 20 10;
+        padding: 40px 10px 20px 10px;
     }
 .preferenceprinc {
     display: flex;
@@ -1106,7 +1104,7 @@ swiper-container.mySwiper {
   max-width: 299px;
   max-height: 430;
   border-radius: 23px;
-  border: 2px solid #003D5A;
+  border: 1px solid #003D5A;
   background-color: transparent;
   margin-left: 25px;
   padding: 30px 16px;
@@ -1345,8 +1343,7 @@ swiper-slide.swiper2 {
     width: 100%;
     max-width: 9290px;
     margin: auto;
-    padding: 0px 0 30px 0;
-    margin-top: 180px;
+    padding-top: 60px;
 }
 .wavec1{
     position: absolute;
@@ -1717,6 +1714,7 @@ form button{
     margin: auto;
     background-color: #0CC0DF;
     cursor: pointer;
+    border:none
 }
 form button:hover{
     background-color: #0CC0DFcc;
@@ -1925,8 +1923,13 @@ line-height: 150%;
         padding: 90px 0 40px;
     }
 }
-
-@media screen and (max-width:860px) {
+@media screen and (max-width:960px) {
+    .mapsfooter{
+        max-width: 1005px;
+        padding: 90px 10px;
+    }    
+}
+@media screen and (max-width:890px) {
     .formimgsbg{
         display: none;
     }
@@ -2064,7 +2067,7 @@ line-height: 150%;
 footer{
     position: relative;
     width: 100%;
-    max-width: 2990px;
+    max-width: 9990px;
     margin: auto;
     height: auto;
     background-color: #003D5A;
@@ -2076,7 +2079,7 @@ footer{
     max-width: 1440px;
     margin: auto;
     justify-content: space-between;
-    padding: 50px 0 30px 0;
+    padding: 50px;
 }
 .footermenu{
     display: flex;
@@ -2127,9 +2130,13 @@ footer{
     line-height: 130%;
 }
 .footersocials{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     width: auto;
 }
 .footersocials p{
+    text-align: center;
     font-size: 16px;
     font-style: normal;
     font-weight: 600;
@@ -2137,6 +2144,7 @@ footer{
 }
 .footersocials ul {
     list-style: none;
+    justify-content: center;
     display: flex;
     text-align: center;
     gap: 18px;
