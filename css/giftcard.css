@@ -15,7 +15,7 @@ main{
     background-position: cover;
     padding-bottom: 60px;
 }
-@media screen and (max-width:1350px) {
+@media screen and (max-width:1600px) {
     main{
         background-size: 200%;
     }    
@@ -30,7 +30,6 @@ main{
         background-size: 500%;
     }    
 }
-
 html{
     scroll-behavior: smooth;
     scroll-padding-top: 30px; 
@@ -368,8 +367,8 @@ position: absolute;
 }
 .maininfos span{
     display: block;
-    font-size: 16px;
-    line-height: 130%;
+    font-size: 24px;
+    line-height: 100%;
     font-weight: 500;
     margin-top: 32px;
 }
@@ -391,8 +390,7 @@ position: absolute;
     text-decoration: dotted;
 }
 .mapaimg{
-    padding: 0;
-    margin-bottom: 32px;
+    padding: 26px 0 32px;
 }
 .mapaimg img{
     width: 100%;
