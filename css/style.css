@@ -2136,7 +2136,7 @@ footer{
     width: auto;
 }
 .footersocials p{
-    text-align: center;
+    text-align: left;
     font-size: 16px;
     font-style: normal;
     font-weight: 600;
@@ -2144,7 +2144,6 @@ footer{
 }
 .footersocials ul {
     list-style: none;
-    justify-content: center;
     display: flex;
     text-align: center;
     gap: 18px;
