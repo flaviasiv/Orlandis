@@ -657,13 +657,6 @@ line-height: 150%;
         margin:auto;
         padding: 90px 0 40px;
     }
-    .map iframe{
-        width:456px;
-         height:290px 
-    }
-    .mapsfooter .mapinfo ul{
-        gap: 20px;
-    }
 }
 @media screen and (max-width:960px) {
     .mapsfooter{
