@@ -1826,6 +1826,18 @@ line-height: 150%;
     margin-top: 30px;
     border: none;
 } */
+.submit{
+    font-family: 'Urbanist';
+    display: flex;
+    flex-direction: column;
+    width: 450px;
+    margin: auto;
+    gap: 20px;
+    padding: 50px;
+}
+.submit h2{
+    font-weight: 500;
+}
 @media screen and (max-width:1250px) {
     .bgs-web{
         display: none;
