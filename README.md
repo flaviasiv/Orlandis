@@ -18,7 +18,7 @@
 - `header com menu e responsividade do menu com um toggle navigation`: Header com max-width centralizado, também responsivo, onde o display do toggle navigation apenas aparece com N width da tela tal qual funcionalidade do mesmo, via JavaScript;
 - `carrosséis de serviços`: Logo abaixo, há um carrosel com serviços realizado, clicável, onde cada serviço é explicado; 
 - `simples animação`: A paginá contém uma simples animação, onde textos e imagens vão aparecendo ao scrollar (descer) a página;
-- `carrosséis`: Slider com reviews de clientes e também portifólio com fotografias de limpezas realizadas;;
+- `carrosséis`: Slider com reviews de clientes e também portifólio com fotografias de limpezas realizadas;
 - `Count up`: Com um simples código de JavaScript fiz um Count Up ao scrollar até o ponto que se encontra na página;
 - `formulário de contato simples sem uso de back-end`: visando usar uma tecnologia boa e sem complexidade, usei um simples formulário feito com HTML e CSS,usando uma ferramenta de API backend que envia diretamente os formulários para o cliente. 
 
