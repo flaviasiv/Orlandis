@@ -353,7 +353,7 @@ position: absolute;
     left: 50%;
     transform: translate(-50%, -80%);
 }
-.videop img{
+.videop video{
     width: 100%;
     max-width: 430px;
     width: 100%;
@@ -696,7 +696,7 @@ swiper-container.mySwiper {
     display: flex;
     background-color: #003D5A;
     width: 100%;
-    max-width: 1350px;
+    max-width: 1950px;
     margin: auto;
     height: 100%;
     max-height: 440px;
@@ -751,12 +751,14 @@ swiper-container.mySwiper {
   background: #95E5FF;
   padding: 30px 20px;
   border: 1px solid #003D5A;
+  align-items: center;
+  justify-content: center;
   text-align: center;
+  gap: 20px;
 }
 /*This block (starts here) is merely styling for the flip card, and is NOT an essential part of the flip code */
 .theback h2{
   color: #003D5A;
-  margin-bottom: 30px;
   font-size: 12px;
   font-style: normal;
   font-weight: 900;
@@ -764,7 +766,6 @@ swiper-container.mySwiper {
   text-align: center;
   display: flex;
   flex-direction: column;
-  margin: auto;
 }
 
 .theback p{
@@ -775,9 +776,7 @@ swiper-container.mySwiper {
   color: #003D5A;
   display: flex;
   flex-direction: column;
-  margin: auto;
   text-align: center;
-  margin-top: 25px;
 }
 /*This block (ends here) is merely styling for the flip card, and is NOT an essential part of the flip code */
 @media screen and (max-width:1300px) {
