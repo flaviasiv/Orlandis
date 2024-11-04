@@ -42,17 +42,6 @@ var cards = document.querySelectorAll('.card');
   });
 });
 
-//pop-up form
-// let popup = document.getElementById("popup");
-
-// function openPopup(){
-//   popup.classList.add("open-popup");
-// }
-// function closePopup(){
-//   popup.classList.remove("open-popup");
-// }
-
-
 //countUp about
 let section_counter = document.querySelector('#section_counter');
 let counters = document.querySelectorAll('.counter-item .counter');
