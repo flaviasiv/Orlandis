@@ -32,7 +32,7 @@ main{
 }
 html{
     scroll-behavior: smooth;
-    scroll-padding-top: 30px; 
+    scroll-padding-top: 150px; 
 }
 header {
     position: relative;
@@ -455,6 +455,11 @@ form{
     display: flex;
     align-items: center;
 }
+.firsth2-1{
+    font-size:30px;
+    margin-bottom: 38px;
+    text-align: center;
+}
 .firsth2 svg{
     margin-right: 8px;
 }
@@ -592,7 +597,12 @@ form button:hover{
     height: auto;
     letter-spacing: 4%;
 }
-
+.maintext-1 ul li{
+    color: #000000;
+    font-size: 14px;
+    font-weight: 800;
+    list-style: none;
+}
 
 @media screen and (max-width:950px) {
     .formcontainer{
@@ -887,3 +897,53 @@ footer{
         left: 40;
     }
 }
+.areasseslectgrid{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 30px;
+}
+.areasselectbtn a{
+    display: flex;
+    margin: auto;
+    margin-top: 10px;
+    text-decoration: none;
+    border-radius: 72px;
+    background: #003D5A;
+    width: 100%;
+    border: none;
+    padding: 8px 20px;
+    justify-content: center;
+    cursor: pointer;
+    align-items: center;
+    color: #FFF;
+}
+.areasselectbtn a:hover{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    transition: 0.1s ease-in-out;
+}
+.d-f{display: flex;flex-direction: row;gap: 10px;align-items: center;}
+.d-f1{gap: 10px;}
+#homeareas, #rugs, #upholstery, #additional{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.maintext-1{
+    padding: 50px 50px 30px;
+}
+#formCarpetCleaning{
+    max-width: 900px;
+}
+#formCarpetCleaning legend{
+    text-align: center;
+}
+#formCarpetCleaning label{
+    display: flex;
+    width: 100%;
+    max-width: 200px;
+    justify-content: space-between;   
+    align-items: center;
+}
+.d-f2{flex-direction: row !important; max-width: 100%;}
+#formCarpetCleaning select, #formCarpetCleaning input {margin: 0;}
+#formCarpetCleaning select {width: 100px;}

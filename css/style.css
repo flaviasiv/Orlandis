@@ -782,6 +782,32 @@ swiper-container.mySwiper {
   flex-direction: column;
   text-align: center;
 }
+.theback button{
+    display: flex;
+    margin: auto;
+    margin-top: 10px;
+    text-decoration: none;
+    border-radius: 72px;
+    background: #003D5A;
+    border: none;
+    padding: 8px 25px;
+    justify-content: center;
+    cursor: pointer;
+    align-items: center;}
+.theback button a{
+    display: flex;
+    text-decoration: none;
+    color: #FFF;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    line-height: 180%;
+    align-items: center;
+    gap: 5px;
+}
+.theback button:hover{
+box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+transition: 0.1s ease-in-out;}
 /*This block (ends here) is merely styling for the flip card, and is NOT an essential part of the flip code */
 @media screen and (max-width:1300px) {
     .maincontainer{
@@ -1472,6 +1498,7 @@ swiper-slide.swiper4 {
 }
 .storylinks button:hover{
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    transition: 0.1s ease-in-out;
 }
 .storylinks button a{
     display: flex;
