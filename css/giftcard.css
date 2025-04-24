@@ -73,9 +73,11 @@ header {
     top: 0;
     z-index: 99;
     width: 100%;
-    max-width: 9999px;
-    margin: auto;
-    background-color:#003D5A;
+    max-width: 1300px;
+    margin: 10px auto;
+    border-radius: 50px;
+    background-color:#003D5A30;
+    backdrop-filter: blur(10px);
     padding: 0 50px 0 50px;
     height: 80px;
     scroll-behavior: smooth;
@@ -100,25 +102,25 @@ header {
     display: flex;
     margin: 0 auto;
     justify-content:space-between;
-    width:570px;
+    width:609px;
     text-align: center;
 }
 .menu-linksbtn a {
     display:block;
     text-align: center;
-    color:#95E5FF;
+    color:#fff;
     text-decoration:none;
     font-family: 'Urbanist', sans-serif;
-    font-size: 16px;
+    font-size: 15px;
     font-style: normal;
     font-weight: 400;
     line-height: 150%;
-    letter-spacing:1px
+    letter-spacing:0.9px
 }
 .menu-linksbtn a:hover{
-    color: #FFF;
-    transition: 0.5s ease-in-out;
-    letter-spacing: 0.7;
+    color: #95E5FF;
+    transition: 0.3s ease-in-out;
+    letter-spacing: 0.9;
 }
 .menusocial{
     right: 0;
@@ -140,24 +142,40 @@ header {
 }
 .menusocial li:first-child{
     display: inline-flex;
-    background-color: #95E5FF;
+    background-color: #003D5A;
     border-radius: 20px;
 }
 .menusocial a:first-child{
-    color: #003D5A;
+    color: #fff;
     font-family: 'Urbanist', sans-serif;
     font-size: 16px;
     font-style: normal;
-    font-weight: 700;
+    font-weight: 400;
     line-height: 150%;
     align-items: center;
     padding: 8px 0px;
     width: 119px;
 }
+.menusocial li svg{
+    fill: #003D5A;
+}
+.menusocial li:hover svg{
+    fill: #95E5FF;
+    transition: 0.1s;
+}
+.menusocial li:first-child:hover{
+    background-color: #95E5FF;
+    transition: 0.1s;
+}
+.menusocial li a:first-child:hover{
+    color: #003D5A;
+    transition: 0.1s;
+    font-weight: 600;
+}
 .menu-linksbtn a:hover,
 .menu-linksbtn a.active {
-  transition: 0.5s ease-out;
-  letter-spacing: 1.2px;
+  transition: 0.2s ease-out;
+  letter-spacing: 1px;
 }
 .btn-toggle{display: none;}
 .logo-m{
@@ -252,26 +270,44 @@ position: absolute;
   }
   .menu-links{
     background-color:#003D5A;
-  flex-direction: column;
-  align-items:center;
-  margin-top: 80px;
-  width: 100%;
-  margin-left: 0;
-  margin-right: 0;
-  padding-top: 0px;
-  border-bottom-right-radius: 32px;
-  border-bottom-left-radius: 32px;
-  height:380px
+    flex-direction: column;
+    align-items:center;
+    margin-top: 50px;
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    padding-top: 0px;
+    border-bottom-right-radius: 32px;
+    border-bottom-left-radius: 32px;
+    height:280px;
+  }
+  .menusocial li:first-child{
+      background-color: #95E5FF;
+  }
+  .menusocial a:first-child{
+      color: #003D5A;
+  }
+  .menusocial li svg{
+      fill: #95E5FF;
+  }
+  .menusocial li:hover svg{
+      fill: #fff;
+  }
+  .menusocial li:first-child:hover{
+      background-color: #fff;
+  }
+  .menusocial li a:first-child:hover{
+      color: #003D5A;
   }
   .menu-links ul{
       display: block;
   }
   .menu-links a {
-  padding:.25rem 2rem
+  padding:0.1rem 0rem
   }
   .menu-linksbtn{
       display: flex;
-      margin-bottom: 20px;
+      margin-bottom: 10px;
   }
   .menusocial ul{
       display: flex;
@@ -281,9 +317,6 @@ position: absolute;
       justify-content: center;
       margin: auto;
       margin-bottom: 10px;
-  }
-  .menusocial ul li:last-child{
-      margin-left:5;
   }
   .menusocial ul a {
       text-decoration:none;
@@ -295,7 +328,6 @@ position: absolute;
       padding: 2px 4px;
       gap: 8px;
       border: 1px solid #003D5A;
-      margin-bottom: 10px;
       border-radius: 20px;
   }
   .menusocial a:first-child{
@@ -314,8 +346,11 @@ position: absolute;
       display:flex
   }
   .navbar {
-  padding:0px 0px;
-  border-radius: 0;
+    padding:0px 0px;    
+    margin-top: 0;
+    backdrop-filter: none;
+    background-color: #003D5A;
+    border-radius: 0;
   }
   #home {
   display:flex;
@@ -936,6 +971,8 @@ footer{
 }
 #formCarpetCleaning legend{
     text-align: center;
+    text-decoration: underline;
+    text-underline-offset: 8px;
 }
 #formCarpetCleaning label{
     display: flex;

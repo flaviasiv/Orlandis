@@ -74,7 +74,7 @@ header {
     display: flex;
     margin: 0 auto;
     justify-content:space-between;
-    width:570px;
+    width:609px;
     text-align: center;
 }
 .menu-linksbtn a {
@@ -83,16 +83,16 @@ header {
     color:#fff;
     text-decoration:none;
     font-family: 'Urbanist', sans-serif;
-    font-size: 16px;
+    font-size: 15px;
     font-style: normal;
     font-weight: 400;
     line-height: 150%;
-    letter-spacing:1px
+    letter-spacing:0.9px
 }
 .menu-linksbtn a:hover{
     color: #95E5FF;
     transition: 0.3s ease-in-out;
-    letter-spacing: 0.7;
+    letter-spacing: 0.9;
 }
 .menusocial{
     right: 0;
@@ -146,8 +146,8 @@ header {
 }
 .menu-linksbtn a:hover,
 .menu-linksbtn a.active {
-  transition: 0.3s ease-out;
-  letter-spacing: 1.2px;
+  transition: 0.1s ease-out;
+  letter-spacing: 1px;
 }
 .btn-toggle{display: none;}
 .logo-m{
