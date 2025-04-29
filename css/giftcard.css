@@ -279,7 +279,7 @@ position: absolute;
     padding-top: 0px;
     border-bottom-right-radius: 32px;
     border-bottom-left-radius: 32px;
-    height:280px;
+    height:299px;
   }
   .menusocial li:first-child{
       background-color: #95E5FF;
@@ -984,3 +984,24 @@ footer{
 .d-f2{flex-direction: row !important; max-width: 100%;}
 #formCarpetCleaning select, #formCarpetCleaning input {margin: 0;}
 #formCarpetCleaning select {width: 100px;}
+@media screen and (max-width:980px) {
+    #formCarpetCleaning{
+        padding: 16px;
+    }
+    .maintext-1{
+        padding: 20px 0;
+    }
+    .areasseslectgrid{
+        gap: 3px;
+    }
+    .areasselectbtn a{
+        font-size: 10px;
+        padding: 10px;
+    }
+    .d-f{
+        justify-content: center;
+    }
+    #formCarpetCleaning h3{
+        text-align: center;
+    }
+}
