@@ -89,7 +89,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </div>
         </div>
         <div class="formcontainer carpetformcontainer">
-            <form action="https://formspree.io/f/mrbzbpbk" method="POST" id="formCarpetCleaning">
+            <form action="https://formspree.io/f/mrbqqpwl" method="POST" id="formCarpetCleaning">
                 <h2 class="firsth2 firsth2-1">
                     LET US GIVE YOU A QUOTE
                     </h2>                    
@@ -531,7 +531,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         <label for="Other-on-additional-services" style="padding-bottom: 10px;"> Other:  
                         </label>
                         <fieldset class="textareaContainer">
-                            <textarea style="resize:none;" wrap="soft" name="message" id="message" rows="10" form="formGiftCard" placeholder="Message"></textarea><label for="message" style="color:#333333a4;font-size:10px;">0 of 250 max characters</label>
+                            <textarea style="resize:none;" wrap="soft" name="message" id="message" rows="10" form="formCarpetCleaning" placeholder="Message"></textarea><label for="message" style="color:#333333a4;font-size:10px;">0 of 250 max characters</label>
                         </fieldset>
                     </div>
                   </div>
@@ -619,62 +619,42 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
 
     <script>
-      // Referências globais
-      const modal = document.getElementById('confirmationModal');
-      const form = document.getElementById('formCarpetCleaning');
-      let modalTimeout;
-      
-      // Funções
-      function showModal() {
-        clearTimeout(modalTimeout);
-        modal.style.display = 'flex';
-        modalTimeout = setTimeout(closeModal, 5000);
-      }
-
-      function closeModal() {
-        modal.style.display = 'none';
-        clearTimeout(modalTimeout);
-      }
-
-      // Event Listeners
-      document.getElementById('modalCloseBtn').addEventListener('click', closeModal);
-      
       form.addEventListener('submit', function(e) {
-        const submitBtn = form.querySelector('button[type="submit"]');
-        submitBtn.disabled = true;
-        submitBtn.textContent = 'Sending...';
-        
-        // Envio REAL do formulário (com fallback)
-        fetch(form.action, {
-          method: 'POST',
-          body: new FormData(form),
-          headers: {
-            'Accept': 'application/json'
-          }
-        })
-        .then(response => {
-          if(response.ok) {
-            showModal();
-            form.reset(); // Opcional: limpar formulário após envio
-          } else {
-            alert('Error submitting form. Please try again.');
-          }
-        })
-        .catch(error => {
-          alert("Thank you for your request. We'll contact you within 1-2 business days.");
-        })
-        .finally(() => {
-          submitBtn.disabled = false;
-          submitBtn.textContent = 'Submit';
-        });
-        
-        e.preventDefault(); // IMPORTANTE: Mantemos isso PARA EVITAR RECARGA DA PÁGINA
-      });
+      e.preventDefault();
+      
+      const submitBtn = form.querySelector('button[type="submit"]');
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Sending...';
 
-      // Fechar modal ao clicar fora
-      modal.addEventListener('click', function(e) {
-        if(e.target === modal) closeModal();
+      // Create URL-encoded form data
+      const formData = new URLSearchParams(new FormData(form)).toString();
+
+      fetch(form.action, {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+          'Accept': 'application/json'
+        }
+      })
+      .then(response => {
+        if(response.ok) {
+          showModal();
+          form.reset();
+        } else {
+          // Fallback to traditional form submission
+          form.submit();
+        }
+      })
+      .catch(() => {
+        // Fallback to traditional form submission
+        form.submit();
+      })
+      .finally(() => {
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Submit';
       });
+    });
     </script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>  
     <script>(function(a,b,c,d){try{var e=b.head||b.getElementsByTagName("head")[0];var f=b.createElement("script");f.setAttribute("src",c);f.setAttribute("charset","UTF-8");f.defer=true;a.neuroleadId=d;e.appendChild(f)}catch(g){}})(window,document,"https://cdn.leadster.com.br/neurolead/neurolead.min.js","xk4kAuPqXKDkaeBQxFIETBQBV")</script>
