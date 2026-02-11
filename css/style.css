@@ -2112,7 +2112,7 @@ footer{
 .footerimglogo img{
     display: block;
     margin: auto;
-    margin-top: -20px;
+    margin-top: 0;
     width: 248px;
 }
 .adress{
