@@ -492,7 +492,8 @@ swiper-container.mySwiper {
 }
 .theback button:hover{
 box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-transition: 0.1s ease-in-out;}
+scale: 1.04;
+transition: 0.2s ease-out;}
 /*This block (ends here) is merely styling for the flip card, and is NOT an essential part of the flip code */
 @media screen and (max-width:1300px) {
     .maincontainer{
@@ -1188,7 +1189,8 @@ swiper-slide.swiper4 {
 }
 .storylinks button:hover{
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    transition: 0.1s ease-in-out;
+    scale: 1.04;
+    transition: 0.2s ease-out;
 }
 .storylinks button a{
     display: flex;
@@ -1424,14 +1426,15 @@ form button{
     border-radius: 16px;
     padding: 10px;
     margin: auto;
-    background-color: #0CC0DF;
     cursor: pointer;
-    border:none
+    border:none;
+    background-color: #0CC0DF;
 }
 form button:hover{
     background-color: #003D5A;
     color: #FFF;
-    transition: 0.1s;
+    scale: 1.04;
+    transition: 0.2s ease-out;
 }
 .form h6{
     display: flex;
@@ -1779,7 +1782,8 @@ footer{
 }
 .footermenu ul li a:hover {
     color: #0cbfdfc5;
-    transition: 0.2s;
+    scale: 1.04;
+    transition: 0.2s ease-out;
 }
 .footermenu ul{
     list-style: none;
@@ -1839,7 +1843,8 @@ footer{
 }
 .footersocials ul li:hover svg{
     fill: #0cbfdfc5;
-    transition: 0.2s;
+    scale: 1.04;
+    transition: 0.2s ease-out;
 }
 .rights{
     display: flex;

@@ -76,9 +76,10 @@ header {
     display: flex;
     margin: 0 auto;
     justify-content: space-between;
-    gap: 16px;
+    gap: 10px;
     width: auto;
     text-align: center;
+    flex-wrap: nowrap;
 }
 .menu-linksbtn a {
     display: block;
@@ -91,12 +92,13 @@ header {
     font-weight: 400;
     line-height: 150%;
     letter-spacing: 0.5px;
+    white-space: nowrap;
 }
 .menu-linksbtn a:hover,
 .menu-linksbtn a.active {
     color: #95E5FF;
     transition: 0.2s ease-out;
-    letter-spacing: 1px;
+    scale: 1.04;
 }
 .menusocial {
     right: 0;
@@ -110,6 +112,12 @@ header {
     width: auto;
     text-align: center;
     gap: 8px;
+}
+.menu-linksbtn li {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
 }
 .menusocial ul a {
     text-decoration: none;
@@ -139,15 +147,27 @@ header {
 .menusocial li:hover svg {
     fill: #95E5FF;
     transition: 0.1s;
+    scale: 1.04;
 }
 .menusocial li:first-child:hover {
     background-color: #95E5FF;
-    transition: 0.1s;
+    transition: 0.2s ease-out;
+    scale: 1.04;
 }
 .menusocial li a:first-child:hover {
     color: #003D5A;
-    transition: 0.1s;
+    transition: 0.2s ease-out;
     font-weight: 600;
+}
+.qbtn {
+    padding: 6px 10px;
+    border-radius: 16px;
+    border: 2px solid #0CC0DF;
+    background-color: rgba(12, 192, 223, 0.18);
+    transition: scale 0.2s ease-out, background-color 0.2s ease-out, color 0.2s ease-out;
+}
+.qbtn:hover {
+    scale: 1.04;
 }
 .btn-toggle { display: none; }
 .logo-m {
