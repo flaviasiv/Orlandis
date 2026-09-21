@@ -1,4 +1,4 @@
-<html lang=”en”>
+<html lang="en">
 <head>
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -72,11 +72,11 @@
         <div class="maincontainer">
             <div class="mainimg"><img src="./assets/orlandis-logoprimary.png" alt="" draggable="false"></div>
             <div class="maininfos">
-              <h2>Gift Card
+              <h1>Gift Card
                 <svg width="62" height="5" viewBox="0 0 62 5" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M0 2.5C0 1.11929 1.11929 0 2.5 0H59.5C60.8807 0 62 1.11929 62 2.5C62 3.88071 60.8807 5 59.5 5H2.5C1.11929 5 0 3.88071 0 2.5Z" fill="#0CC0DF"/>
                   </svg>                  
-              </h2>
+              </h1>
                 <p style="color:#95E5FF;">Express your greetings and love by <br>sending them the gift of their own time!</p>
                 <span>Areas we serve:
                 </span>
@@ -212,7 +212,7 @@
                       </div>
                 </fieldset>
                 <fieldset class="textareaContainer">
-                    <textarea style="resize:none;" wrap="soft" name="message" id="message" rows="10" form="formGiftCard" placeholder="Note for Card"></textarea><label for="message" style="color:#333333a4;font-size:10px;">0 of 250 max characters</label>
+                    <textarea style="resize:none;" wrap="soft" name="message" id="message" rows="4" maxlength="250" form="formGiftCard" placeholder="Note for Card" aria-describedby="message-count"></textarea><label for="message" id="message-count" data-count-for="message" style="color:#333333a4;font-size:10px;">0 of 250 max characters</label>
                 </fieldset>
                 <fieldset class="textareaContainer">
                     <textarea style="resize:none;" wrap="soft" name="observation" id="observation" rows="2" form="formGiftCard" placeholder="Enter any special instruction, message or concerns about the services."></textarea><label for="message"></label>
@@ -309,6 +309,7 @@
         </script>
     <script>(function(a,b,c,d){try{var e=b.head||b.getElementsByTagName("head")[0];var f=b.createElement("script");f.setAttribute("src",c);f.setAttribute("charset","UTF-8");f.defer=true;a.neuroleadId=d;e.appendChild(f)}catch(g){}})(window,document,"https://cdn.leadster.com.br/neurolead/neurolead.min.js","xk4kAuPqXKDkaeBQxFIETBQBV")</script>
         <script src="./js/javascript.js"></script>
+        <script src="./js/charcount.js"></script>
         <script src="js/swiper-bundle.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/swiper@8.4.7/swiper-bundle.min.js"></script>

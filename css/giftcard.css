@@ -55,14 +55,14 @@ html{
     text-align: center;
     color: #fff;
 }
-.maininfos h2{
+.maininfos h2, .maininfos h1{
     display: flex;
     flex-direction: column;
     margin: auto;
     font-size: 32px;
     text-align: center;
 }
-.maininfos h2 svg{
+.maininfos h2 svg, .maininfos h1 svg{
     margin: auto;
     margin-bottom: 36px;
     margin-top: 16px;
@@ -114,7 +114,7 @@ html{
     .maininfos{
         padding: 0 50px;
     }
-    .maininfos h2{
+    .maininfos h2, .maininfos h1{
         font-size: 30px;
     }
     .maininfos span{

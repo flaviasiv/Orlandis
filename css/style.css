@@ -59,7 +59,7 @@ html{
     bottom: -1px;
     position: absolute;
 }
-.videop p{
+.videop p, .videop h1{
     color: #fff;
     width: 490px;
     height: auto;
@@ -71,7 +71,7 @@ html{
     font-weight: 400;
     padding-top: 40px;
 }
-.videop p span{
+.videop p span, .videop h1 span{
     text-decoration:underline#95E5FF 6px !important;
     text-underline-offset:15px !important;
     -webkit-text-decoration-line:  underline !important;
@@ -86,7 +86,7 @@ html{
         height: 100%;
         margin: auto;
     }
-    .videop p{
+    .videop p, .videop h1{
         width: 100%;
         max-width: 370px;
         height: auto;
@@ -114,7 +114,7 @@ html{
         left: 50%;
         transform: translate(-50%, -50%);
     }
-    .videop p{
+    .videop p, .videop h1{
         max-width:700px;
         padding-top: 30px;
         font-size: 33px;
@@ -1203,6 +1203,14 @@ swiper-slide.swiper4 {
 }
 .storylinks button a svg{
     margin-right: 5px;
+}
+.storylinks button.btn-conduct-channel{
+    background: #95E5FF;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+.storylinks button.btn-conduct-channel a{
+    color: #003D5A;
 }
 .storym-1:last-child{
     margin-bottom: 10px;
