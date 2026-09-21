@@ -187,7 +187,7 @@
     display: block;
     max-width: none;
     margin: 0;
-    padding: 30px 14px 20px;
+    padding: 46px 32px 36px;
     background: transparent;
     border: 1.5px solid var(--coc-navy);
     border-radius: 10px;
@@ -215,62 +215,56 @@
     font-size: 15px;
     line-height: 1.3;
     font-weight: 500;
-    margin: 6px auto 14px;
+    margin: 8px auto 30px;
     max-width: 560px;
     color: var(--coc-navy);
 }
 
 .coc-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-auto-flow: row dense;
-    gap: 14px 22px;
-    align-items: start;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    max-width: 620px;
+    margin: 0 auto;
 }
-.coc-full { grid-column: 1 / -1; }
 .coc-field { position: relative; }
 .coc-field[hidden] { display: none; }
 
 .coc-label {
     display: block;
-    font-size: 15px;
-    line-height: 1.25;
-    margin-bottom: 4px;
+    font-size: 16px;
+    line-height: 1.3;
+    margin-bottom: 8px;
     color: var(--coc-navy);
 }
 .coc-label strong { font-weight: 800; }
 .coc-label small { font-size: 12.5px; font-weight: 500; }
 .coc-hint {
     display: block;
-    font-size: 12.5px;
+    font-size: 13.5px;
     line-height: 1.3;
     font-weight: 500;
-    margin-bottom: 6px;
+    margin-bottom: 10px;
     color: var(--coc-navy);
 }
 
-.coc-boxed {
-    border: 1.5px solid var(--coc-blue);
-    border-radius: 6px;
-    padding: 8px 12px 10px;
-}
 .coc-radios {
     display: flex;
     flex-wrap: wrap;
-    gap: 6px 22px;
-    margin-top: 6px;
+    gap: 10px 28px;
+    margin-top: 10px;
 }
 .coc-radios label {
     display: flex;
     align-items: center;
-    gap: 6px;
-    font-size: 12.5px;
+    gap: 8px;
+    font-size: 15px;
     font-weight: 500;
     cursor: pointer;
 }
 .coc-radios input[type="radio"] {
-    width: 16px;
-    height: 16px;
+    width: 18px;
+    height: 18px;
     margin: 0;
     padding: 0;
     accent-color: var(--coc-navy);
@@ -285,8 +279,8 @@
     border: 1.5px solid var(--coc-blue);
     border-radius: 6px;
     background: var(--coc-field);
-    padding: 0 12px;
-    height: 38px;
+    padding: 0 14px;
+    height: 44px;
     font-family: 'Urbanist', sans-serif;
     font-size: 15px;
     font-weight: 500;
@@ -296,12 +290,12 @@
 }
 .coc-field textarea {
     height: auto;
-    min-height: 74px;
-    padding: 8px 12px;
+    min-height: 132px;
+    padding: 12px 14px;
     resize: vertical;
 }
-#f-additional { min-height: 60px; }
-.coc-field input[type="date"] { max-width: 320px; }
+#f-additional { min-height: 96px; }
+.coc-field input[type="date"] { max-width: 300px; }
 .coc-field input:focus,
 .coc-field textarea:focus {
     border-color: var(--coc-navy);
@@ -384,7 +378,7 @@
 .form-status[hidden] { display: none; }
 
 .coc-submit {
-    margin-top: 20px;
+    margin-top: 36px;
     text-align: center;
 }
 #formConduct .coc-submit button {
@@ -492,7 +486,7 @@
     .coc-dark, .coc-commit { padding: 14px 18px; gap: 14px; }
     .coc-dark svg { width: 42px; height: 42px; }
     .coc-commit svg { width: 48px; height: 44px; }
-    .coc-grid { grid-template-columns: 1fr; }
+    .coc-grid { gap: 20px; }
     #formConduct.coc-form { padding: 34px 12px 18px; }
     .coc-form-title { white-space: normal; text-align: center; width: max-content; max-width: calc(100% - 20px); }
     .coc-trust { flex-direction: column; align-items: center; gap: 14px; }
