@@ -1,5 +1,5 @@
 (function () {
-  var MAX_FILES = 10;
+  var MAX_FILES = 3;
   var MAX_BYTES = 25 * 1024 * 1024;
 
   var T = {
@@ -16,6 +16,8 @@
       optIdentify: 'I want to identify myself',
       optAnon: 'I prefer to remain anonymous',
       opt: '(optional)',
+      optMax: '(optional, up to 3 files)',
+      removeFile: 'Remove',
       l2: 'Your name',
       l3: 'Best contact information',
       l3h: '(Email or phone)',
@@ -35,7 +37,7 @@
       thanksTitle: 'Thank you.',
       thanksText: 'Your report was received by our team and will be handled with confidentiality and responsibility.',
       tagline: 'Doing <span>the right thing</span> is what cleans us from within.',
-      errFiles: 'Please attach up to 10 files of 25 MB each.',
+      errFiles: 'You can attach up to 3 files, 25 MB each.',
       errSend: 'We could not send your report. Please try again.',
       errType: 'Only DOC, DOCX, PDF, JPG, PNG or WEBP files can be attached.',
       errOffline: 'You appear to be offline. Your text is still here; reconnect and submit again.',
@@ -54,6 +56,8 @@
       optIdentify: 'Quero me identificar',
       optAnon: 'Prefiro permanecer anônimo(a)',
       opt: '(opcional)',
+      optMax: '(opcional, até 3 arquivos)',
+      removeFile: 'Remover',
       l2: 'Seu nome',
       l3: 'Melhor contato',
       l3h: '(E-mail ou telefone)',
@@ -73,7 +77,7 @@
       thanksTitle: 'Obrigado.',
       thanksText: 'Seu relato foi recebido pela nossa equipe e será tratado com sigilo e responsabilidade.',
       tagline: 'Fazer <span>o certo</span> é o que nos limpa por dentro.',
-      errFiles: 'Anexe até 10 arquivos de 25 MB cada.',
+      errFiles: 'Você pode anexar até 3 arquivos, de 25 MB cada.',
       errSend: 'Não foi possível enviar seu relato. Tente novamente.',
       errType: 'Só é possível anexar arquivos DOC, DOCX, PDF, JPG, PNG ou WEBP.',
       errOffline: 'Você parece estar sem internet. Seu texto continua aqui; reconecte e envie novamente.',
@@ -92,6 +96,8 @@
       optIdentify: 'Quiero identificarme',
       optAnon: 'Prefiero permanecer anónimo(a)',
       opt: '(opcional)',
+      optMax: '(opcional, hasta 3 archivos)',
+      removeFile: 'Eliminar',
       l2: 'Tu nombre',
       l3: 'Mejor contacto',
       l3h: '(Correo o teléfono)',
@@ -111,7 +117,7 @@
       thanksTitle: 'Gracias.',
       thanksText: 'Tu reporte fue recibido por nuestro equipo y será tratado con confidencialidad y responsabilidad.',
       tagline: 'Hacer <span>lo correcto</span> también nos limpia por dentro.',
-      errFiles: 'Adjunta hasta 10 archivos de 25 MB cada uno.',
+      errFiles: 'Puedes adjuntar hasta 3 archivos, de 25 MB cada uno.',
       errSend: 'No pudimos enviar tu reporte. Inténtalo de nuevo.',
       errType: 'Solo se pueden adjuntar archivos DOC, DOCX, PDF, JPG, PNG o WEBP.',
       errOffline: 'Parece que no tienes conexión. Tu texto sigue aquí; reconéctate y envía de nuevo.',
@@ -134,6 +140,7 @@
   var fileNames = document.getElementById('fileNames');
   var submitBtn = form.querySelector('button[type="submit"]');
   var errKey = null;
+  var chosen = [];
   var dateField = document.getElementById('f-date');
 
   // An incident cannot be in the future (local date, not UTC)
@@ -159,6 +166,7 @@
     });
     if (!submitBtn.disabled) submitBtn.textContent = t.submit;
     if (errKey) status.textContent = t[errKey];
+    renderFiles();
   }
 
   function showError(key) {
@@ -195,9 +203,58 @@
     });
   });
 
+  function fmtSize(n) {
+    return n >= 1048576 ? (n / 1048576).toFixed(1) + ' MB' : Math.max(1, Math.round(n / 1024)) + ' KB';
+  }
+
+  function sync() {
+    var dt = new DataTransfer();
+    chosen.forEach(function (f) { dt.items.add(f); });
+    fileInput.files = dt.files;
+  }
+
+  function renderFiles() {
+    fileNames.textContent = '';
+    chosen.forEach(function (f, i) {
+      var li = document.createElement('li');
+      var name = document.createElement('span');
+      name.className = 'fname';
+      name.textContent = f.name;
+      var size = document.createElement('span');
+      size.className = 'fsize';
+      size.textContent = fmtSize(f.size);
+      var rm = document.createElement('button');
+      rm.type = 'button';
+      rm.textContent = '×';
+      rm.setAttribute('aria-label', T[current].removeFile + ': ' + f.name);
+      rm.addEventListener('click', function () {
+        chosen.splice(i, 1);
+        sync();
+        renderFiles();
+        clearError();
+      });
+      li.appendChild(name);
+      li.appendChild(size);
+      li.appendChild(rm);
+      fileNames.appendChild(li);
+    });
+  }
+
+  // Each pick adds to the list (up to MAX_FILES) instead of replacing it
   fileInput.addEventListener('change', function () {
     clearError();
-    fileNames.textContent = Array.prototype.map.call(fileInput.files, function (f) { return f.name; }).join(', ');
+    var picked = Array.prototype.slice.call(fileInput.files);
+    var problem = null;
+    picked.forEach(function (f) {
+      var dup = chosen.some(function (c) { return c.name === f.name && c.size === f.size && c.lastModified === f.lastModified; });
+      if (dup) return;
+      if (badFile(f)) { problem = 'errType'; return; }
+      if (f.size > MAX_BYTES || chosen.length >= MAX_FILES) { problem = 'errFiles'; return; }
+      chosen.push(f);
+    });
+    sync();
+    renderFiles();
+    if (problem) showError(problem);
   });
 
   form.addEventListener('submit', function (e) {
@@ -205,7 +262,7 @@
     if (submitBtn.disabled) return;
     clearError();
 
-    var files = Array.prototype.slice.call(fileInput.files);
+    var files = chosen.slice();
     if (files.some(badFile)) { showError('errType'); return; }
     if (files.length > MAX_FILES || files.some(function (f) { return f.size > MAX_BYTES; })) { showError('errFiles'); return; }
     if (navigator.onLine === false) { showError('errOffline'); return; }
@@ -228,10 +285,13 @@
           langField.value = current;
           fieldName.hidden = false;
           fieldContact.hidden = false;
-          fileNames.textContent = '';
+          chosen = [];
+          renderFiles();
           form.hidden = true;
           thanks.hidden = false;
-          thanks.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          var calm = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+          thanks.scrollIntoView({ behavior: calm ? 'auto' : 'smooth', block: 'center' });
+          thanks.focus({ preventScroll: true });
         } else {
           showError(res.status === 413 ? 'errFiles' : 'errSend');
         }

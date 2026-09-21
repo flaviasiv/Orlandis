@@ -18,6 +18,11 @@
     color: var(--coc-navy);
     font-family: 'Urbanist', sans-serif;
 }
+::selection { background: var(--coc-navy); color: #fff; }
+.coc-main input,
+.coc-main textarea { caret-color: var(--coc-blue); accent-color: var(--coc-navy); }
+.coc-thanks:focus { outline: none; }
+
 .coc-page {
     max-width: 940px;
     margin: 0 auto;
@@ -327,8 +332,37 @@
     opacity: 0;
     overflow: hidden;
 }
-.coc-file-input:focus-visible + .coc-file-names,
-.coc-file-input:focus-visible ~ .coc-file-btn { outline: 2px solid var(--coc-navy); }
+.coc-file-input:focus-visible + .coc-file-btn { outline: 2px solid var(--coc-navy); outline-offset: 2px; }
+.coc-file-btn:active { background: #E1EEFC; }
+.coc-file-list { list-style: none; margin-top: 8px; display: flex; flex-direction: column; gap: 6px; }
+.coc-file-list li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 6px 6px 6px 12px;
+    border: 1.5px solid var(--coc-line);
+    border-radius: 6px;
+    background: #fff;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--coc-navy);
+}
+.coc-file-list .fname { flex: 1; min-width: 0; overflow-wrap: anywhere; }
+.coc-file-list .fsize { flex-shrink: 0; font-size: 12px; opacity: 0.75; }
+.coc-file-list button {
+    flex-shrink: 0;
+    width: 30px;
+    height: 30px;
+    border: none;
+    border-radius: 50%;
+    background: transparent;
+    color: var(--coc-navy);
+    font-size: 20px;
+    line-height: 1;
+    cursor: pointer;
+}
+.coc-file-list button:hover { background: #E1EEFC; }
+.coc-file-list button:focus-visible { outline: 2px solid var(--coc-blue); outline-offset: 1px; }
 .coc-file-names {
     display: block;
     margin-top: 6px;
@@ -366,6 +400,9 @@
     transition: background-color 0.2s;
 }
 #formConduct .coc-submit button:hover { background: var(--coc-blue); }
+#formConduct .coc-submit button:active { background: var(--coc-navy); transform: translateY(1px); }
+#formConduct .coc-submit button:focus-visible { outline: 3px solid var(--coc-blue); outline-offset: 3px; }
+.coc-radios input[type="radio"]:focus-visible { outline: 2px solid var(--coc-blue); outline-offset: 2px; }
 #formConduct .coc-submit button:disabled { opacity: 0.6; cursor: wait; }
 
 .coc-thanks {
@@ -423,6 +460,23 @@
     color: #fff;
 }
 .coc-tagline span { color: #4FC3F7; font-weight: 700; }
+
+/* ── Touch: 44px targets ── */
+@media (pointer: coarse) {
+    .lang-btn { min-height: 44px; min-width: 48px; }
+    .coc-radios label { min-height: 44px; }
+    .coc-radios input[type="radio"] { width: 20px; height: 20px; }
+    .coc-file-btn { min-height: 44px; }
+    .coc-file-list button { width: 44px; height: 44px; }
+    .coc-field input[type="text"],
+    .coc-field input[type="date"] { height: 44px; }
+}
+
+/* ── Reduced motion ── */
+@media (prefers-reduced-motion: reduce) {
+    .lang-btn, #formConduct .coc-submit button { transition: none; }
+    #formConduct .coc-submit button:active { transform: none; }
+}
 
 /* ── Mobile ── */
 @media screen and (max-width: 720px) {

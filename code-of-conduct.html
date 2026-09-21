@@ -84,6 +84,8 @@
       <p class="coc-form-note" data-i18n="formNote">Please complete the fields below with as much detail as possible. Your report will be received directly by our team and handled responsibly.</p>
 
       <input type="hidden" name="language" id="langField" value="en">
+      <!-- Spam trap: hidden from people, bots fill it and Formspree discards the submission -->
+      <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="display:none">
 
       <div class="coc-grid">
         <div class="coc-field coc-boxed" id="fieldIdentify">
@@ -122,14 +124,14 @@
         </div>
 
         <div class="coc-field">
-          <p class="coc-label"><strong>7. <span data-i18n="l7">Attachments</span></strong> <small data-i18n="opt">(optional)</small></p>
-          <small class="coc-hint" data-i18n="l7h">You may upload documents, photos, or other files that may help. Accepted: DOC, DOCX, PDF, JPG, PNG, WEBP.</small>
+          <p class="coc-label"><strong>7. <span data-i18n="l7">Attachments</span></strong> <small data-i18n="optMax">(optional, up to 3 files)</small></p>
+          <small class="coc-hint" id="hint-files" data-i18n="l7h">You may upload documents, photos, or other files that may help. Accepted: DOC, DOCX, PDF, JPG, PNG, WEBP.</small>
+          <input type="file" name="attachment" id="attachment" multiple accept=".doc,.docx,.pdf,.jpg,.jpeg,.png,.webp" class="coc-file-input" aria-describedby="hint-files">
           <label class="coc-file-btn" for="attachment">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M21 11l-9 9a5 5 0 01-7-7l9-9a3.5 3.5 0 015 5l-9 9a2 2 0 01-3-3l8-8" stroke="#1E6FD9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
             <span data-i18n="addFile">Add file</span>
           </label>
-          <input type="file" name="attachment" id="attachment" multiple accept=".doc,.docx,.pdf,.jpg,.jpeg,.png,.webp" class="coc-file-input">
-          <small class="coc-file-names" id="fileNames"></small>
+          <ul class="coc-file-list" id="fileNames" aria-live="polite"></ul>
         </div>
       </div>
 
@@ -140,7 +142,7 @@
       </div>
     </form>
 
-    <div class="coc-thanks" id="formThanks" hidden>
+    <div class="coc-thanks" id="formThanks" tabindex="-1" hidden>
       <h2 data-i18n="thanksTitle">Thank you.</h2>
       <p data-i18n="thanksText">Your report was received by our team and will be handled with confidentiality and responsibility.</p>
     </div>
