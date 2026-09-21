@@ -106,3 +106,11 @@ formulario.addEventListener('submit', (e) => {
     alert('Campo é obrigatório');
   }
 });
+// Reduce motion: do not autoplay the looping hero video
+(function () {
+  var video = document.querySelector('.videobg video');
+  if (video && window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    video.removeAttribute('autoplay');
+    video.pause();
+  }
+})();

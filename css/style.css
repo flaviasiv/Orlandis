@@ -1206,8 +1206,8 @@ swiper-slide.swiper4 {
 }
 .storylinks button.btn-conduct-channel{
     background: #95E5FF;
-    margin-top: 0;
-    margin-bottom: 10px;
+    margin-top: 10px;
+    margin-bottom: 0;
 }
 .storylinks button.btn-conduct-channel a{
     color: #003D5A;
@@ -1988,4 +1988,15 @@ footer{
 }
 :root {
     --scroll: 0
+}
+
+/* Respect the "reduce motion" system setting */
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .reveal,
+    .reveal.active {
+        transform: none;
+        opacity: 1;
+        transition: none;
+    }
 }
