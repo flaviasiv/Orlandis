@@ -37,11 +37,13 @@
       thanksTitle: 'Thank you.',
       thanksText: 'Your report was received by our team and will be handled with confidentiality and responsibility.',
       tagline: 'Doing <span>the right thing</span> is what cleans us from within.',
+      recaptchaNote: 'This site is protected by reCAPTCHA and the Google <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacy Policy</a> and <a href="https://policies.google.com/terms" target="_blank" rel="noopener">Terms of Service</a> apply.',
       errFiles: 'You can attach up to 3 files, 25 MB each.',
       errSend: 'We could not send your report. Please try again.',
       errType: 'Only DOC, DOCX, PDF, JPG, PNG or WEBP files can be attached.',
       errOffline: 'You appear to be offline. Your text is still here; reconnect and submit again.',
-      errTimeout: 'The upload is taking too long. Try fewer or smaller files, then submit again.'
+      errTimeout: 'The upload is taking too long. Try fewer or smaller files, then submit again.',
+      errCaptcha: 'Please confirm you are not a robot.'
     },
     pt: {
       title: 'Canal de Conduta',
@@ -77,11 +79,13 @@
       thanksTitle: 'Obrigado.',
       thanksText: 'Seu relato foi recebido pela nossa equipe e será tratado com sigilo e responsabilidade.',
       tagline: 'Fazer <span>o certo</span> é o que nos limpa por dentro.',
+      recaptchaNote: 'Este site é protegido pelo reCAPTCHA e se aplicam a <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Política de Privacidade</a> e os <a href="https://policies.google.com/terms" target="_blank" rel="noopener">Termos de Serviço</a> do Google.',
       errFiles: 'Você pode anexar até 3 arquivos, de 25 MB cada.',
       errSend: 'Não foi possível enviar seu relato. Tente novamente.',
       errType: 'Só é possível anexar arquivos DOC, DOCX, PDF, JPG, PNG ou WEBP.',
       errOffline: 'Você parece estar sem internet. Seu texto continua aqui; reconecte e envie novamente.',
-      errTimeout: 'O envio está demorando demais. Tente menos arquivos ou arquivos menores e envie novamente.'
+      errTimeout: 'O envio está demorando demais. Tente menos arquivos ou arquivos menores e envie novamente.',
+      errCaptcha: 'Por favor, confirme que você não é um robô.'
     },
     es: {
       title: 'Canal de Conducta',
@@ -117,16 +121,19 @@
       thanksTitle: 'Gracias.',
       thanksText: 'Tu reporte fue recibido por nuestro equipo y será tratado con confidencialidad y responsabilidad.',
       tagline: 'Hacer <span>lo correcto</span> también nos limpia por dentro.',
+      recaptchaNote: 'Este sitio está protegido por reCAPTCHA y se aplican la <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Política de Privacidad</a> y los <a href="https://policies.google.com/terms" target="_blank" rel="noopener">Términos de Servicio</a> de Google.',
       errFiles: 'Puedes adjuntar hasta 3 archivos, de 25 MB cada uno.',
       errSend: 'No pudimos enviar tu reporte. Inténtalo de nuevo.',
       errType: 'Solo se pueden adjuntar archivos DOC, DOCX, PDF, JPG, PNG o WEBP.',
       errOffline: 'Parece que no tienes conexión. Tu texto sigue aquí; reconéctate y envía de nuevo.',
-      errTimeout: 'El envío está tardando demasiado. Prueba con menos archivos o más pequeños y envía de nuevo.'
+      errTimeout: 'El envío está tardando demasiado. Prueba con menos archivos o más pequeños y envía de nuevo.',
+      errCaptcha: 'Por favor, confirma que no eres un robot.'
     }
   };
 
   var ALLOWED_EXT = ['doc', 'docx', 'pdf', 'jpg', 'jpeg', 'png', 'webp'];
   var TIMEOUT_MS = 90000;
+  var RECAPTCHA_SITE_KEY = '6LdL7NMtAAAAAHaQjhRWbjemYD1yv6hdQVW47sJZ';
   var LANG_ATTR = { en: 'en-US', pt: 'pt-BR', es: 'es' };
   var current = 'en';
 
@@ -138,7 +145,10 @@
   var fieldContact = document.getElementById('fieldContact');
   var fileInput = document.getElementById('attachment');
   var fileNames = document.getElementById('fileNames');
+  var descField = document.getElementById('f-description');
+  var charCount = document.getElementById('charcount-description');
   var submitBtn = form.querySelector('button[type="submit"]');
+  var recaptchaToken = document.getElementById('recaptchaToken');
   var errKey = null;
   var chosen = [];
   var dateField = document.getElementById('f-date');
@@ -146,6 +156,14 @@
   // An incident cannot be in the future (local date, not UTC)
   var now = new Date();
   dateField.max = now.getFullYear() + '-' + String(now.getMonth() + 1).padStart(2, '0') + '-' + String(now.getDate()).padStart(2, '0');
+
+  var DESC_MAX = descField.maxLength;
+  function updateCharCount() {
+    var len = descField.value.length;
+    charCount.textContent = len + ' / ' + DESC_MAX;
+    charCount.classList.toggle('coc-charcount-limit', len >= DESC_MAX);
+  }
+  descField.addEventListener('input', updateCharCount);
 
   function setLang(lang) {
     current = lang;
@@ -273,16 +291,28 @@
     var ctrl = new AbortController();
     var timer = setTimeout(function () { ctrl.abort(); }, TIMEOUT_MS);
 
-    fetch(form.action, {
-      method: 'POST',
-      body: new FormData(form),
-      headers: { 'Accept': 'application/json' },
-      signal: ctrl.signal
+    var getToken = window.grecaptcha
+      ? new Promise(function (resolve) {
+          grecaptcha.ready(function () {
+            grecaptcha.execute(RECAPTCHA_SITE_KEY, { action: 'submit' }).then(resolve);
+          });
+        })
+      : Promise.resolve('');
+
+    getToken.then(function (token) {
+      recaptchaToken.value = token;
+      return fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' },
+        signal: ctrl.signal
+      });
     })
       .then(function (res) {
         if (res.ok) {
           form.reset();
           langField.value = current;
+          updateCharCount();
           fieldName.hidden = false;
           fieldContact.hidden = false;
           chosen = [];

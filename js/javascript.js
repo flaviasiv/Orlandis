@@ -46,6 +46,13 @@ var cards = document.querySelectorAll('.card');
 let section_counter = document.querySelector('#section_counter');
 let counters = document.querySelectorAll('.counter-item .counter');
 
+// Counters with data-since show years elapsed since that year
+counters.forEach((counter) => {
+  if (counter.dataset.since) {
+    counter.dataset.target = new Date().getFullYear() - +counter.dataset.since;
+  }
+});
+
 // Scroll Animation
 
 let CounterObserver = new IntersectionObserver(
