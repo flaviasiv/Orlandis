@@ -89,30 +89,9 @@ let CounterObserver = new IntersectionObserver(
   }
 );
 
-CounterObserver.observe(section_counter);
+if (section_counter) CounterObserver.observe(section_counter);
 
 
-//input required após selecionar um outro input antes
-const radioGroup = document.querySelectorAll('input[name="grupo"]');
-const campoObrigatorio = document.getElementById('campoObrigatorio');
-const formulario = document.getElementById('formCarpetCleaning');
-
-radioGroup.forEach(radio => {
-  radio.addEventListener('change', () => {
-    if (radio.value === 'op2') {
-      campoObrigatorio.setAttribute('required', 'true');
-    } else {
-      campoObrigatorio.removeAttribute('required');
-    }
-  });
-});
-
-formulario.addEventListener('submit', (e) => {
-  if (!campoObrigatorio.checkValidity()) {
-    e.preventDefault();
-    alert('Campo é obrigatório');
-  }
-});
 // Reduce motion: do not autoplay the looping hero video
 (function () {
   var video = document.querySelector('.videobg video');

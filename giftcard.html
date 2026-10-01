@@ -143,9 +143,9 @@
                   <h2>Input the details for who is purchasing the gift card</h2>
                   <div>
                     <input type="text" required placeholder="First name*" autocomplete="on" name="FirstName" id="sendername">
-                    <input type="text" required placeholder="Last name*" autocomplete="on" name="LastName" id="senderlastname" pattern="{3}">
+                    <input type="text" required placeholder="Last name*" autocomplete="on" name="LastName" id="senderlastname" minlength="2">
                     <input type="email" autocomplete="on" id="senderemail" name="email" placeholder="Email Address">
-                    <input type="tel" required autocomplete="on" placeholder="Mobile Phone*" id="senderphone" name="phone">
+                    <input type="tel" required autocomplete="on" placeholder="Mobile Phone*" id="senderphone" name="senderphone">
                     <input type="address" autocomplete="on" id="senderaddress" name="address" placeholder="Address">
                   </div>
                 </fieldset>               
@@ -154,14 +154,14 @@
                   <h2>Input the details for who you are purchasing gift</h2>
                   <div>
                     <input form="formGiftCard" type="text" required placeholder="First name*" autocomplete="on" name="firstName" id="receivername">
-                    <input form="formGiftCard" type="text" required placeholder="Last name*" autocomplete="on" name="lastName" id="receiverlastname" pattern="{3}">
-                    <input form="formGiftCard" type="tel" required autocomplete="on" placeholder="Mobile Phone*" id="receiverphone" name="phone">
+                    <input form="formGiftCard" type="text" required placeholder="Last name*" autocomplete="on" name="lastName" id="receiverlastname" minlength="2">
+                    <input form="formGiftCard" type="tel" required autocomplete="on" placeholder="Mobile Phone*" id="receiverphone" name="receiverphone">
                     <input form="formGiftCard" type="address" autocomplete="on" id="receiveraddress" name="receiveraddress" placeholder="Address">
                     <input form="formGiftCard" type="text" autocomplete="off" id="receiverstreet" name="receiverstreet" placeholder="Street Address">
                     <input form="formGiftCard" type="text" autocomplete="off" id="receivercity" name="receivercity" placeholder="City">
                     <input form="formGiftCard" type="text" autocomplete="off" id="receiverzip" name="receiverzip" placeholder="Zip Code">
                     <select id="areaselect" placeholder="Select Area" name="areaselectform" form="formGiftCard">
-                      <option value="()" selected style="color:gray;background-color:rgba(128, 128, 128, 0.219);">Select Area</option>
+                      <option value="" selected style="color:gray;background-color:rgba(128, 128, 128, 0.219);">Select Area</option>
                       <option value="bexley">Bexley</option>
                       <option value="blacklick">Blacklick</option>
                       <option value="winchester">Canal Winchester</option>

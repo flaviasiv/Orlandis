@@ -112,6 +112,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <div class="areasselectbtn"><a href="#rugs">YOUR RUGS</a></div>
                     <div class="areasselectbtn"><a href="#upholstery">YOUR UPHOLSTERY AREAS</a></div>
                   </div>
+                  <p id="areas-error" role="alert" tabindex="-1" hidden style="color:#b3261e;font-weight:600;margin-top:12px;">Please select at least 3 areas (rooms, rugs or upholstery) so we can prepare your quote.</p>
                 </div>
                 <fieldset>
                   <legend>YOUR HOME AREAS</legend> <br>
@@ -621,42 +622,71 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
 
     <script>
-      form.addEventListener('submit', function(e) {
-      e.preventDefault();
-      
-      const submitBtn = form.querySelector('button[type="submit"]');
-      submitBtn.disabled = true;
-      submitBtn.textContent = 'Sending...';
+      (function () {
+        var form = document.getElementById('formCarpetCleaning');
+        var modal = document.getElementById('confirmationModal');
+        var closeBtn = document.getElementById('modalCloseBtn');
+        var areasError = document.getElementById('areas-error');
+        var MIN_AREAS = 3;
 
-      // Create URL-encoded form data
-      const formData = new URLSearchParams(new FormData(form)).toString();
+        function showModal() { modal.style.display = 'flex'; closeBtn.focus(); }
+        function hideModal() { modal.style.display = 'none'; }
+        closeBtn.addEventListener('click', hideModal);
+        modal.addEventListener('keydown', function (e) { if (e.key === 'Escape') hideModal(); });
 
-      fetch(form.action, {
-        method: 'POST',
-        body: formData,
-        headers: {
-          'Content-Type': 'application/x-www-form-urlencoded',
-          'Accept': 'application/json'
+        // Each filled item counts as 1 area. "none" and the Basement yes/no toggle do not count.
+        function countAreas() {
+          var count = 0;
+          form.querySelectorAll('#homeareas select, #rugs select, #upholstery select').forEach(function (sel) {
+            if (sel.value && !/^(zero|none)-/.test(sel.value)) count++;
+          });
+          form.querySelectorAll('#homeareas input[type="radio"][value="yes"]:checked, #rugs input[type="radio"][value="yes"]:checked, #upholstery input[type="radio"][value="yes"]:checked').forEach(function (r) {
+            if (r.name !== 'Basement-on-home-areas') count++;
+          });
+          return count;
         }
-      })
-      .then(response => {
-        if(response.ok) {
-          showModal();
-          form.reset();
-        } else {
-          // Fallback to traditional form submission
-          form.submit();
-        }
-      })
-      .catch(() => {
-        // Fallback to traditional form submission
-        form.submit();
-      })
-      .finally(() => {
-        submitBtn.disabled = false;
-        submitBtn.textContent = 'Submit';
-      });
-    });
+
+        form.addEventListener('change', function () {
+          if (!areasError.hidden && countAreas() >= MIN_AREAS) areasError.hidden = true;
+        });
+
+        form.addEventListener('submit', function (e) {
+          e.preventDefault();
+
+          if (countAreas() < MIN_AREAS) {
+            areasError.hidden = false;
+            areasError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            areasError.focus({ preventScroll: true });
+            return;
+          }
+
+          var submitBtn = form.querySelector('button[type="submit"]');
+          submitBtn.disabled = true;
+          submitBtn.textContent = 'Sending...';
+
+          fetch(form.action, {
+            method: 'POST',
+            body: new URLSearchParams(new FormData(form)).toString(),
+            headers: {
+              'Content-Type': 'application/x-www-form-urlencoded',
+              'Accept': 'application/json'
+            }
+          })
+          .then(function (response) {
+            if (response.ok) {
+              showModal();
+              form.reset();
+            } else {
+              form.submit();
+            }
+          })
+          .catch(function () { form.submit(); })
+          .finally(function () {
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Submit';
+          });
+        });
+      })();
     </script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>  
     <script>(function(a,b,c,d){try{var e=b.head||b.getElementsByTagName("head")[0];var f=b.createElement("script");f.setAttribute("src",c);f.setAttribute("charset","UTF-8");f.defer=true;a.neuroleadId=d;e.appendChild(f)}catch(g){}})(window,document,"https://cdn.leadster.com.br/neurolead/neurolead.min.js","xk4kAuPqXKDkaeBQxFIETBQBV")</script>

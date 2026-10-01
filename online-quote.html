@@ -137,19 +137,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <div class="fields">
             <div>
               <p class="field-label">Areas' Square Footage*</p>
-              <input type="number" name="Business Square Footage" placeholder="Square footage*" min="0">
+              <input type="number" data-biz-required name="Business Square Footage" placeholder="Square footage*" min="0">
             </div>
             <div>
               <p class="field-label">Business Type*</p>
-              <input type="text" name="Business Type" placeholder="Business type*">
+              <input type="text" data-biz-required name="Business Type" placeholder="Business type*">
             </div>
             <div>
               <p class="field-label">Business Name*</p>
-              <input type="text" name="Business Name" placeholder="Business name*">
+              <input type="text" data-biz-required name="Business Name" placeholder="Business name*">
             </div>
             <div>
               <p class="field-label">Number of Offices*</p>
-              <select name="Business Offices">
+              <select name="Business Offices" data-biz-required>
                 <option value="" disabled selected>Offices (0–20)*</option>
                 <option value="0">0</option><option value="1">1</option><option value="2">2</option>
                 <option value="3">3</option><option value="4">4</option><option value="5">5</option>
@@ -162,7 +162,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </div>
             <div>
               <p class="field-label">Number of Bathrooms*</p>
-              <select name="Business Bathrooms">
+              <select name="Business Bathrooms" data-biz-required>
                 <option value="" disabled selected>Bathrooms (0–20)*</option>
                 <option value="0">0</option><option value="1">1</option><option value="2">2</option>
                 <option value="3">3</option><option value="4">4</option><option value="5">5</option>
@@ -175,7 +175,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </div>
             <div>
               <p class="field-label">Kitchen / Kitchenette*</p>
-              <select name="Business Kitchen">
+              <select name="Business Kitchen" data-biz-required>
                 <option value="" disabled selected>Kitchen / Kitchenette*</option>
                 <option value="Yes">Yes</option>
                 <option value="No">No</option>
@@ -189,8 +189,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
       </fieldset>
 
-      <!-- ── Section 3: Property Details ── -->
-      <fieldset>
+      <!-- ── Section 3: Property Details (residential only) ── -->
+      <fieldset id="propertyDetails">
         <legend>Property Details</legend>
         <div class="fields">
 
@@ -474,10 +474,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <script src="./js/javascript.js"></script>
 
 <script>
-  // Cleaning type → business section
+  // Cleaning type → business section (office/business) or property details (everything else).
+  // Business fields are required only for office/business; a disabled fieldset is skipped by
+  // validation and submission, so home-only fields never block an office quote.
   document.getElementById('cleaningType').addEventListener('change', function () {
-    document.getElementById('businessSection').style.display =
-      this.value === 'Regular services (office/business)' ? 'block' : 'none';
+    var isBusiness = this.value === 'Regular services (office/business)';
+    var property = document.getElementById('propertyDetails');
+    document.getElementById('businessSection').style.display = isBusiness ? 'block' : 'none';
+    property.disabled = isBusiness;
+    property.style.display = isBusiness ? 'none' : '';
+    document.querySelectorAll('[data-biz-required]').forEach(function (el) {
+      el.required = isBusiness;
+    });
   });
 
   // Basement → basement section
