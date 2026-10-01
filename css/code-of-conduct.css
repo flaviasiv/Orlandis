@@ -149,23 +149,6 @@
     color: var(--coc-navy);
 }
 
-.coc-dark {
-    display: flex;
-    align-items: center;
-    gap: 22px;
-    background: var(--coc-navy);
-    color: #fff;
-    border-radius: 14px;
-    padding: 16px 30px;
-    margin-bottom: 12px;
-}
-.coc-dark svg { flex-shrink: 0; }
-.coc-dark p {
-    font-size: clamp(15px, 2.1vw, 20px);
-    line-height: 1.4;
-    font-weight: 500;
-}
-
 .coc-commit {
     display: flex;
     align-items: center;
@@ -510,8 +493,7 @@
     .coc-values li { grid-column: span 2; }
     .coc-values li:nth-child(4) { grid-column: 2 / span 2; }
     .coc-values li:nth-child(5) { grid-column: span 2; }
-    .coc-dark, .coc-commit { padding: 14px 18px; gap: 14px; }
-    .coc-dark svg { width: 42px; height: 42px; }
+    .coc-commit { padding: 14px 18px; gap: 14px; }
     .coc-commit svg { width: 48px; height: 44px; }
     .coc-grid { gap: 20px; }
     #formConduct.coc-form { padding: 34px 12px 18px; }
